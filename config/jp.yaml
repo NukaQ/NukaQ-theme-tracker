@@ -1,0 +1,74 @@
+# 日本株のテーマ定義（書き方は us.yaml と同じ）
+market: jp
+name: 日本株
+currency: JPY
+benchmarks:
+  1306.T: TOPIX (1306)
+  ^N225: 日経平均
+sectors:
+  - name: テクノロジー
+    subsectors:
+      - name: 半導体
+        bigThemes:
+          - name: 半導体サプライチェーン
+            themes:
+              - name: 半導体製造装置
+                tickers: {8035.T: 東京エレクトロン, 6857.T: アドバンテスト, 6920.T: レーザーテック, 7735.T: SCREEN, 6146.T: ディスコ, 6323.T: ローツェ}
+              - name: 半導体材料
+                tickers: {4063.T: 信越化学, 3436.T: SUMCO, 4186.T: 東京応化, 4004.T: レゾナック}
+          - name: 電子部品
+            themes:
+              - name: コンデンサ・受動部品
+                tickers: {6981.T: 村田製作所, 6762.T: TDK, 6976.T: 太陽誘電}
+      - name: AI・通信
+        bigThemes:
+          - name: AIインフラ
+            themes:
+              - name: 光ファイバー・電線
+                tickers: {5803.T: フジクラ, 5801.T: 古河電工, 5802.T: 住友電工}
+              - name: 生成AI・ITサービス
+                tickers: {9984.T: ソフトバンクG, 6701.T: NEC, 6702.T: 富士通, 4307.T: 野村総研}
+  - name: 資本財
+    subsectors:
+      - name: 重工業
+        bigThemes:
+          - name: 安全保障・エネルギー
+            themes:
+              - name: 防衛
+                tickers: {7011.T: 三菱重工, 7012.T: 川崎重工, 7013.T: IHI}
+              - name: 電力・送配電
+                tickers: {6501.T: 日立, 9501.T: 東京電力HD, 9503.T: 関西電力}
+      - name: 商社
+        bigThemes:
+          - name: 総合商社
+            themes:
+              - name: 5大商社
+                tickers: {8058.T: 三菱商事, 8031.T: 三井物産, 8001.T: 伊藤忠, 8053.T: 住友商事, 8002.T: 丸紅}
+  - name: 金融
+    subsectors:
+      - name: 銀行・保険
+        bigThemes:
+          - name: 金利上昇メリット
+            themes:
+              - name: メガバンク
+                tickers: {8306.T: 三菱UFJ, 8316.T: 三井住友FG, 8411.T: みずほFG}
+              - name: 損害保険
+                tickers: {8766.T: 東京海上, 8725.T: MS&AD, 8630.T: SOMPO}
+  - name: 一般消費財
+    subsectors:
+      - name: 消費・サービス
+        bigThemes:
+          - name: インバウンド
+            themes:
+              - name: 旅行・百貨店
+                tickers: {9201.T: JAL, 9202.T: ANA, 3099.T: 三越伊勢丹, 3086.T: Jフロント, 4661.T: オリエンタルランド}
+          - name: エンタメ
+            themes:
+              - name: ゲーム・コンテンツ
+                tickers: {7974.T: 任天堂, 6758.T: ソニーG, 9697.T: カプコン, 9684.T: スクエニHD, 7832.T: バンナムHD}
+      - name: 自動車
+        bigThemes:
+          - name: 自動車
+            themes:
+              - name: 完成車・部品
+                tickers: {7203.T: トヨタ, 7267.T: ホンダ, 6902.T: デンソー}

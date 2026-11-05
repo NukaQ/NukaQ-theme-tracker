@@ -1,0 +1,98 @@
+# 米国株のテーマ定義
+# 階層: セクター > サブセクター > 大テーマ > テーマ > 銘柄
+# 銘柄は「ティッカー: 表示名」で書く。同じ銘柄を複数テーマに入れてもよい。
+market: us
+name: 米国株
+currency: USD
+benchmarks:
+  SPY: S&P500 (SPY)
+  QQQ: NASDAQ100 (QQQ)
+sectors:
+  - name: テクノロジー
+    subsectors:
+      - name: 半導体
+        bigThemes:
+          - name: AI半導体
+            themes:
+              - name: GPU・AIアクセラレータ
+                tickers: {NVDA: NVIDIA, AMD: AMD, AVGO: Broadcom, MRVL: Marvell, ARM: Arm}
+              - name: メモリ
+                tickers: {MU: Micron, WDC: Western Digital, STX: Seagate, SNDK: SanDisk}
+          - name: 半導体サプライチェーン
+            themes:
+              - name: 半導体製造装置
+                tickers: {AMAT: Applied Materials, LRCX: Lam Research, KLAC: KLA, ASML: ASML, TER: Teradyne}
+              - name: ファウンドリ
+                tickers: {TSM: TSMC, INTC: Intel, GFS: GlobalFoundries, UMC: UMC}
+      - name: ネットワーク・ハードウェア
+        bigThemes:
+          - name: データセンター接続
+            themes:
+              - name: 光接続
+                tickers: {COHR: Coherent, LITE: Lumentum, AAOI: Applied Optoelectronics, CIEN: Ciena, FN: Fabrinet}
+              - name: データセンターネットワーク
+                tickers: {ANET: Arista Networks, CSCO: Cisco, CRDO: Credo, ALAB: Astera Labs}
+          - name: AIインフラ機器
+            themes:
+              - name: AIサーバー
+                tickers: {SMCI: Super Micro, DELL: Dell, HPE: HPE}
+              - name: 量子コンピューター
+                tickers: {IONQ: IonQ, RGTI: Rigetti, QBTS: D-Wave, QUBT: Quantum Computing}
+      - name: ソフトウェア
+        bigThemes:
+          - name: AIソフトウェア
+            themes:
+              - name: ハイパースケーラー
+                tickers: {MSFT: Microsoft, GOOGL: Alphabet, AMZN: Amazon, META: Meta, ORCL: Oracle}
+              - name: AIアプリケーション
+                tickers: {PLTR: Palantir, SNOW: Snowflake, DDOG: Datadog, MDB: MongoDB}
+          - name: エンタープライズ
+            themes:
+              - name: サイバーセキュリティ
+                tickers: {CRWD: CrowdStrike, PANW: Palo Alto, ZS: Zscaler, FTNT: Fortinet, NET: Cloudflare}
+              - name: SaaS
+                tickers: {CRM: Salesforce, NOW: ServiceNow, ADBE: Adobe, WDAY: Workday, HUBS: HubSpot}
+  - name: 資本財・エネルギー
+    subsectors:
+      - name: 電力
+        bigThemes:
+          - name: AI電力需要
+            themes:
+              - name: 電力インフラ
+                tickers: {VRT: Vertiv, ETN: Eaton, GEV: GE Vernova, PWR: Quanta Services}
+              - name: 原子力
+                tickers: {CEG: Constellation, VST: Vistra, OKLO: Oklo, SMR: NuScale, CCJ: Cameco, BWXT: BWX Technologies}
+      - name: 航空宇宙・防衛
+        bigThemes:
+          - name: 安全保障
+            themes:
+              - name: 防衛
+                tickers: {LMT: Lockheed Martin, RTX: RTX, NOC: Northrop Grumman, GD: General Dynamics, LHX: L3Harris}
+              - name: 宇宙
+                tickers: {RKLB: Rocket Lab, ASTS: AST SpaceMobile, PL: Planet Labs, LUNR: Intuitive Machines}
+  - name: ヘルスケア
+    subsectors:
+      - name: 医薬品
+        bigThemes:
+          - name: 肥満症治療
+            themes:
+              - name: GLP-1
+                tickers: {LLY: Eli Lilly, NVO: Novo Nordisk, VKTX: Viking Therapeutics}
+  - name: 一般消費財
+    subsectors:
+      - name: 自動車
+        bigThemes:
+          - name: 次世代モビリティ
+            themes:
+              - name: EV
+                tickers: {TSLA: Tesla, RIVN: Rivian, LCID: Lucid}
+  - name: 金融
+    subsectors:
+      - name: 新しい金融
+        bigThemes:
+          - name: デジタル金融
+            themes:
+              - name: 暗号資産関連
+                tickers: {COIN: Coinbase, MSTR: Strategy, HOOD: Robinhood, MARA: MARA Holdings, RIOT: Riot Platforms}
+              - name: フィンテック
+                tickers: {SOFI: SoFi, AFRM: Affirm, PYPL: PayPal, XYZ: Block}

@@ -1,0 +1,9 @@
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+web/tsconfig.tsbuildinfo
+__pycache__/
+*.pyc
+# 株価データはGitHub Actionsで毎回作り直す
+web/public/data/
