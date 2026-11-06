@@ -11,10 +11,12 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import math
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -51,8 +53,41 @@ def load_config(market: str) -> dict:
         return yaml.safe_load(f)
 
 
+def norm_ticker(raw, market: str) -> str:
+    """設定に書いたティッカーをYahooの表記にそろえる（日本株は 8035 → 8035.T）。"""
+    t = str(raw).strip().upper().replace(".", "-") if market == "us" else str(raw).strip().upper()
+    if market == "jp" and re.fullmatch(r"[0-9A-Z]{4}", t):
+        t += ".T"
+    return t
+
+
+def parse_tickers(spec, market: str) -> tuple[list[str], dict[str, str]]:
+    """tickers の書き方（リスト／辞書／リストの中に {ティッカー: 名前}）を読み取る。"""
+    tickers: list[str] = []
+    names: dict[str, str] = {}
+    items = spec.items() if isinstance(spec, dict) else [
+        next(iter(x.items())) if isinstance(x, dict) else (x, None) for x in spec
+    ]
+    for raw, name in items:
+        t = norm_ticker(raw, market)
+        tickers.append(t)
+        if name:
+            names[t] = str(name)
+    return unique(tickers), names
+
+
+def load_universe(market: str) -> dict[str, dict]:
+    """指数の構成銘柄一覧（config/universe/{market}.csv）。"""
+    path = CONFIG_DIR / "universe" / f"{market}.csv"
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {r["ticker"]: r for r in csv.DictReader(f)}
+
+
 def build_groups(cfg: dict) -> tuple[list[dict], dict[str, str]]:
     """設定を、階層ごとのグループ一覧と「ティッカー → 表示名」に展開する。"""
+    market = cfg["market"]
     groups: list[dict] = []
     names: dict[str, str] = {}
 
@@ -73,9 +108,8 @@ def build_groups(cfg: dict) -> tuple[list[dict], dict[str, str]]:
             for big in sub["bigThemes"]:
                 big_t: list[str] = []
                 for th in big["themes"]:
-                    t = [str(k) for k in th["tickers"].keys()]
-                    for k, v in th["tickers"].items():
-                        names[str(k)] = str(v)
+                    t, n = parse_tickers(th["tickers"], market)
+                    names.update(n)
                     path = [sec["name"], sub["name"], big["name"], th["name"]]
                     add("theme", th["name"], path, True, t)
                     big_t += t
@@ -96,10 +130,27 @@ def unique(items: list[str]) -> list[str]:
 def fetch_prices(tickers: list[str]) -> tuple[pd.DataFrame, pd.DataFrame]:
     import yfinance as yf
 
-    df = yf.download(tickers, period="2y", interval="1d", auto_adjust=True,
-                     progress=False, group_by="column", threads=True)
-    close = df["Close"].reindex(columns=tickers)
-    volume = df["Volume"].reindex(columns=tickers)
+    def download(batch):
+        df = yf.download(batch, period="2y", interval="1d", auto_adjust=True,
+                         progress=False, group_by="column", threads=True)
+        return df["Close"].reindex(columns=batch), df["Volume"].reindex(columns=batch)
+
+    closes, volumes = [], []
+    for i in range(0, len(tickers), 100):  # 一度に頼みすぎると取りこぼすので100銘柄ずつ
+        c, v = download(tickers[i:i + 100])
+        closes.append(c)
+        volumes.append(v)
+    close = pd.concat(closes, axis=1)
+    volume = pd.concat(volumes, axis=1)
+
+    retry = [t for t in tickers if close[t].dropna().empty]
+    if retry:  # 取りこぼした銘柄だけもう一度
+        c, v = download(retry)
+        for t in retry:
+            if not c[t].dropna().empty:
+                close[t], volume[t] = c[t], v[t]
+    close = close.reindex(columns=tickers)
+    volume = volume.reindex(columns=tickers)
     missing = [t for t in tickers if close[t].dropna().empty]
     if missing:
         print(f"  ! 株価が取れなかった銘柄: {', '.join(missing)}", file=sys.stderr)
@@ -109,22 +160,28 @@ def fetch_prices(tickers: list[str]) -> tuple[pd.DataFrame, pd.DataFrame]:
 def fetch_market_caps(tickers: list[str]) -> dict[str, float]:
     import yfinance as yf
 
-    caps: dict[str, float] = {}
-    for t in tickers:
+    def one(t):
         try:
             cap = yf.Ticker(t).fast_info.get("marketCap")
             if cap and not math.isnan(cap):
-                caps[t] = float(cap)
+                return t, float(cap)
         except Exception:  # 時価総額が取れなくても他の計算は続ける
             pass
+        return t, None
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        caps = {t: c for t, c in ex.map(one, tickers) if c}
+    if len(caps) < len(tickers):
+        print(f"  ! 時価総額が取れなかった銘柄: {len(tickers) - len(caps)}", file=sys.stderr)
     return caps
 
 
-def repair_splits(close: pd.DataFrame) -> pd.DataFrame:
+def repair_splits(close: pd.DataFrame, volume: pd.DataFrame) -> pd.DataFrame:
     """Yahooのデータで株式分割が反映されていない箇所を直す。
 
     1日で株価が2倍以上（または半分以下）になり、その倍率が分割比率らしい
     きりのいい数（2, 3, 4, 5, 10 など）に近いとき、それより前の株価を割り戻す。
+    ただし出来高が普段の3倍以上の日は、本当に急騰・急落したとみなして直さない。
     """
     ratios = [2, 3, 4, 5, 8, 10, 20, 25, 50, 100]
     fixed = close.copy()
@@ -133,11 +190,15 @@ def repair_splits(close: pd.DataFrame) -> pd.DataFrame:
         if len(s) < 2:
             continue
         jump = (s / s.shift(1)).iloc[1:]
+        vol = volume[col].reindex(s.index)
+        usual = vol.shift(1).rolling(20, min_periods=5).median()
         for day, r in jump.items():
+            if vol.get(day, 0) > 3 * (usual.get(day) or float("inf")):
+                continue
             for n in ratios:
                 for target in (n, 1 / n):
                     # 2倍は普通の急騰でも起きるので判定を厳しくする
-                    tol = 0.03 if n == 2 else 0.08
+                    tol = 0.03 if n == 2 else 0.05
                     if abs(r / target - 1) < tol:
                         fixed.loc[fixed.index < day, col] *= target
                         print(f"  ~ {col}: {day.date()} の分割（約{r:.2f}倍）を補正", file=sys.stderr)
@@ -199,11 +260,13 @@ def rnd(x, d=2):
     return None if x is None or not np.isfinite(x) else round(float(x), d)
 
 
-def stock_stats(t: str, name: str, c: pd.Series, v: pd.Series, bench: pd.Series,
+def stock_stats(t: str, name: str, meta: dict, c: pd.Series, v: pd.Series, bench: pd.Series,
                 cap: float | None, currency: str) -> dict:
     c = c.dropna()
+    info = {"name": name, "sector": meta.get("sector") or None, "industry": meta.get("industry") or None,
+            "inIndex": bool(meta)}
     if c.empty:
-        return {"name": name, "missing": True}
+        return {**info, "missing": True}
     last = c.iloc[-1]
     yr = c.iloc[-252:]
     daily = c.pct_change()
@@ -219,7 +282,7 @@ def stock_stats(t: str, name: str, c: pd.Series, v: pd.Series, bench: pd.Series,
     cap_usd = cap / JPY_PER_USD if cap and currency == "JPY" else cap
     spark = c.iloc[-SPARK_DAYS:]
     return {
-        "name": name,
+        **info,
         "close": rnd(last, 2),
         "returns": period_returns(c),
         "marketCap": cap,
@@ -244,12 +307,12 @@ def group_index(close: pd.DataFrame, tickers: list[str]) -> pd.Series:
 
 
 def compute(cfg: dict, close: pd.DataFrame, volume: pd.DataFrame, caps: dict) -> dict:
-    groups, names = build_groups(cfg)
+    groups, names, universe = all_names(cfg)
     bench_syms = list(cfg["benchmarks"].keys())
     main_bench = close[bench_syms[0]]
     currency = cfg.get("currency", "USD")
 
-    stocks = {t: stock_stats(t, n, close[t], volume[t], main_bench, caps.get(t), currency)
+    stocks = {t: stock_stats(t, n, universe.get(t, {}), close[t], volume[t], main_bench, caps.get(t), currency)
               for t, n in names.items()}
 
     # 各グループの指数・騰落率・上昇銘柄の割合
@@ -301,19 +364,40 @@ def compute(cfg: dict, close: pd.DataFrame, volume: pd.DataFrame, caps: dict) ->
     }
 
 
+def all_names(cfg: dict) -> tuple[list[dict], dict[str, str], dict[str, dict]]:
+    """指数の全銘柄＋テーマに書いた銘柄の「ティッカー → 表示名」。
+
+    名前の優先順位: 設定の names ＞ テーマに書いた名前 ＞ 指数一覧の名前
+    """
+    market = cfg["market"]
+    groups, theme_names = build_groups(cfg)
+    universe = load_universe(market)
+    names = {t: r["name"] for t, r in universe.items()}
+    for g in groups:
+        for t in g["tickers"]:
+            names.setdefault(t, t)
+    names.update(theme_names)
+    for raw, n in (cfg.get("names") or {}).items():
+        names[norm_ticker(raw, market)] = str(n)
+    names = {t: n for t, n in names.items() if t in universe or any(t in g["tickers"] for g in groups)}
+    return groups, names, universe
+
+
 # ---------------------------------------------------------------- 実行
 
 def run(market: str, sample: bool) -> None:
     cfg = load_config(market)
-    groups, names = build_groups(cfg)
+    groups, names, universe = all_names(cfg)
     tickers = unique(list(names.keys()) + list(cfg["benchmarks"].keys()))
-    print(f"[{market}] {len(names)} 銘柄 / {sum(g['level'] == 'theme' for g in groups)} テーマ")
+    themed = {t for g in groups for t in g["tickers"]}
+    print(f"[{market}] {len(names)} 銘柄（指数 {len(universe)}・テーマに所属 {len(themed)}）"
+          f" / {sum(g['level'] == 'theme' for g in groups)} テーマ")
 
     if sample:
         close, volume, caps = sample_prices(tickers, groups, seed=1 if market == "us" else 2)
     else:
         close, volume = fetch_prices(tickers)
-        close = repair_splits(close)
+        close = repair_splits(close, volume)
         caps = fetch_market_caps(list(names.keys()))
     # 市場が違う銘柄の休場日で行がずれないよう、全銘柄が休みの日だけ消す
     close = close.dropna(how="all")

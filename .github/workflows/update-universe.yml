@@ -1,0 +1,40 @@
+# S&P500・日経225 の構成銘柄一覧を月1回取り直し、変わっていればコミットする。
+# 次の「Update data and deploy」の実行から新しい銘柄がサイトに反映される。
+name: Update index constituents
+
+on:
+  schedule:
+    - cron: "17 0 1 * *"   # 毎月1日 09:17 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 構成銘柄一覧を取得
+        run: |
+          pip install -r requirements.txt
+          python scripts/update_universe.py
+
+      - name: 変更があればコミット
+        run: |
+          if git diff --quiet config/universe; then
+            echo "構成銘柄に変更はありません"
+            exit 0
+          fi
+          git diff --stat config/universe
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/universe
+          git commit -m "指数の構成銘柄一覧を更新"
+          git push

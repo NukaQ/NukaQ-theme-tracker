@@ -95,9 +95,10 @@ function Treemap({ data, level, period, size }: { data: MarketData; level: Group
           {inner.map((t) => {
             const s = data.stocks[t.item];
             const v = s.returns?.[period] ?? null;
-            const area = t.w * t.h;
-            const fs = Math.max(9, Math.min(22, Math.sqrt(area) / 5));
             const label = data.market === "jp" ? s.name : t.item;
+            // 名前がタイルの幅に収まる文字サイズにする（全角は1文字≒1em、半角は≒0.62em）
+            const ems = [...label].reduce((n, ch) => n + (ch.charCodeAt(0) > 0xff ? 1 : 0.62), 0);
+            const fs = Math.max(8, Math.min(22, Math.sqrt(t.w * t.h) / 5, (t.w - 6) / Math.max(ems, 1)));
             return (
               <a key={t.item} className="tm-tile" href={quoteUrl(data.market, t.item)} target="_blank" rel="noreferrer"
                 style={{ left: t.x, top: t.y, width: t.w, height: t.h, background: heat(v, period), fontSize: fs }}

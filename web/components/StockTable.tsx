@@ -81,9 +81,11 @@ export default function StockTable({ rows, period, showThemes = false, showMarke
                   </a>
                   {(showThemes || showMarket) && (
                     <span className="path">
-                      {showMarket && (r.market === "jp" ? "日本株" : "米国株")}
-                      {showMarket && showThemes && r.themes?.length ? "・" : ""}
-                      {showThemes && r.themes?.join(" / ")}
+                      {[
+                        showMarket && (r.market === "jp" ? "日本株" : "米国株"),
+                        showThemes && s.sector,
+                        showThemes && r.themes?.join(" / "),
+                      ].filter(Boolean).join("・")}
                     </span>
                   )}
                 </td>

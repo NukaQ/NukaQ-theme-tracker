@@ -1,0 +1,504 @@
+ticker,name,sector,industry
+A,Agilent Technologies,ヘルスケア,Life Sciences Tools & Services
+AAPL,Apple Inc.,情報技術,"Technology Hardware, Storage & Peripherals"
+ABBV,AbbVie,ヘルスケア,Biotechnology
+ABNB,Airbnb,一般消費財,"Hotels, Resorts & Cruise Lines"
+ABT,Abbott Laboratories,ヘルスケア,Health Care Equipment
+ACGL,Arch Capital Group,金融,Property & Casualty Insurance
+ACN,Accenture,情報技術,IT Consulting & Other Services
+ADBE,Adobe Inc.,情報技術,Application Software
+ADI,Analog Devices,情報技術,Semiconductors
+ADM,Archer Daniels Midland,生活必需品,Agricultural Products & Services
+ADP,Automatic Data Processing,資本財,Human Resource & Employment Services
+ADSK,Autodesk,情報技術,Application Software
+AEE,Ameren,公益,Multi-Utilities
+AEP,American Electric Power,公益,Electric Utilities
+AES,AES Corporation,公益,Independent Power Producers & Energy Traders
+AFL,Aflac,金融,Life & Health Insurance
+AIG,American International Group,金融,Multi-line Insurance
+AIZ,Assurant,金融,Multi-line Insurance
+AJG,Arthur J. Gallagher & Co.,金融,Insurance Brokers
+AKAM,Akamai Technologies,情報技術,Internet Services & Infrastructure
+ALB,Albemarle Corporation,素材,Specialty Chemicals
+ALGN,Align Technology,ヘルスケア,Health Care Supplies
+ALL,Allstate,金融,Property & Casualty Insurance
+ALLE,Allegion,資本財,Building Products
+AMAT,Applied Materials,情報技術,Semiconductor Materials & Equipment
+AMCR,Amcor,素材,Paper & Plastic Packaging Products & Materials
+AMD,Advanced Micro Devices,情報技術,Semiconductors
+AME,Ametek,資本財,Electrical Components & Equipment
+AMGN,Amgen,ヘルスケア,Biotechnology
+AMP,Ameriprise Financial,金融,Asset Management & Custody Banks
+AMT,American Tower,不動産,Telecom Tower REITs
+AMZN,Amazon,一般消費財,Broadline Retail
+ANET,Arista Networks,情報技術,Communications Equipment
+AON,Aon plc,金融,Insurance Brokers
+AOS,A. O. Smith,資本財,Building Products
+APA,APA Corporation,エネルギー,Oil & Gas Exploration & Production
+APD,Air Products,素材,Industrial Gases
+APH,Amphenol,情報技術,Electronic Components
+APO,Apollo Global Management,金融,Asset Management & Custody Banks
+APP,AppLovin,通信サービス,Advertising
+APTV,Aptiv,一般消費財,Automotive Parts & Equipment
+ARE,Alexandria Real Estate Equities,不動産,Office REITs
+ARES,Ares Management,金融,Asset Management & Custody Banks
+ATO,Atmos Energy,公益,Gas Utilities
+AVGO,Broadcom,情報技術,Semiconductors
+AVY,Avery Dennison,素材,Paper & Plastic Packaging Products & Materials
+AWK,American Water Works,公益,Water Utilities
+AXON,Axon Enterprise,資本財,Aerospace & Defense
+AXP,American Express,金融,Consumer Finance
+AZO,AutoZone,一般消費財,Automotive Retail
+BA,Boeing,資本財,Aerospace & Defense
+BAC,Bank of America,金融,Diversified Banks
+BALL,Ball Corporation,素材,"Metal, Glass & Plastic Containers"
+BAX,Baxter International,ヘルスケア,Health Care Equipment
+BBY,Best Buy,一般消費財,Computer & Electronics Retail
+BDX,Becton Dickinson,ヘルスケア,Health Care Equipment
+BE,Bloom Energy,資本財,Electrical Components & Equipment
+BEN,Franklin Resources,金融,Asset Management & Custody Banks
+BF-B,Brown–Forman,生活必需品,Distillers & Vintners
+BG,Bunge Global,生活必需品,Agricultural Products & Services
+BIIB,Biogen,ヘルスケア,Biotechnology
+BKNG,Booking Holdings,一般消費財,"Hotels, Resorts & Cruise Lines"
+BKR,Baker Hughes,エネルギー,Oil & Gas Equipment & Services
+BLK,BlackRock,金融,Asset Management & Custody Banks
+BMY,Bristol Myers Squibb,ヘルスケア,Pharmaceuticals
+BNY,BNY Mellon,金融,Asset Management & Custody Banks
+BR,Broadridge Financial Solutions,資本財,Data Processing & Outsourced Services
+BRK-B,Berkshire Hathaway,金融,Multi-Sector Holdings
+BRO,Brown & Brown,金融,Insurance Brokers
+BSX,Boston Scientific,ヘルスケア,Health Care Equipment
+BX,Blackstone Inc.,金融,Asset Management & Custody Banks
+BXP,"BXP, Inc.",不動産,Office REITs
+C,Citigroup,金融,Diversified Banks
+CAH,Cardinal Health,ヘルスケア,Health Care Distributors
+CARR,Carrier Global,資本財,Building Products
+CASY,Casey's,生活必需品,Food Retail
+CAT,Caterpillar Inc.,資本財,Construction Machinery & Heavy Transportation Equipment
+CB,Chubb Limited,金融,Property & Casualty Insurance
+CBOE,Cboe Global Markets,金融,Financial Exchanges & Data
+CBRE,CBRE Group,不動産,Real Estate Services
+CCI,Crown Castle,不動産,Telecom Tower REITs
+CCL,Carnival Corporation,一般消費財,"Hotels, Resorts & Cruise Lines"
+CDNS,Cadence Design Systems,情報技術,Application Software
+CDW,CDW Corporation,情報技術,Technology Distributors
+CEG,Constellation Energy,公益,Electric Utilities
+CF,CF Industries,素材,Fertilizers & Agricultural Chemicals
+CFG,Citizens Financial Group,金融,Regional Banks
+CHD,Church & Dwight,生活必需品,Household Products
+CHRW,C.H. Robinson,資本財,Air Freight & Logistics
+CHTR,Charter Communications,通信サービス,Cable & Satellite
+CI,Cigna,ヘルスケア,Health Care Services
+CIEN,Ciena,情報技術,Communications Equipment
+CINF,Cincinnati Financial,金融,Property & Casualty Insurance
+CL,Colgate-Palmolive,生活必需品,Household Products
+CLX,Clorox,生活必需品,Household Products
+CMCSA,Comcast,通信サービス,Cable & Satellite
+CME,CME Group,金融,Financial Exchanges & Data
+CMG,Chipotle Mexican Grill,一般消費財,Restaurants
+CMI,Cummins,資本財,Construction Machinery & Heavy Transportation Equipment
+CMS,CMS Energy,公益,Multi-Utilities
+CNC,Centene Corporation,ヘルスケア,Managed Health Care
+CNP,CenterPoint Energy,公益,Multi-Utilities
+COF,Capital One,金融,Consumer Finance
+COHR,Coherent Corp.,情報技術,Electronic Components
+COIN,Coinbase,金融,Financial Exchanges & Data
+COO,Cooper Companies (The),ヘルスケア,Health Care Supplies
+COP,ConocoPhillips,エネルギー,Oil & Gas Exploration & Production
+COR,Cencora,ヘルスケア,Health Care Distributors
+COST,Costco,生活必需品,Consumer Staples Merchandise Retail
+CPAY,Corpay,金融,Transaction & Payment Processing Services
+CPRT,Copart,資本財,Diversified Support Services
+CPT,Camden Property Trust,不動産,Multi-Family Residential REITs
+CRH,CRH plc,素材,Construction Materials
+CRL,Charles River Laboratories,ヘルスケア,Life Sciences Tools & Services
+CRM,Salesforce,情報技術,Application Software
+CRWD,CrowdStrike,情報技術,Systems Software
+CSCO,Cisco,情報技術,Communications Equipment
+CSGP,CoStar Group,不動産,Real Estate Services
+CSX,CSX Corporation,資本財,Rail Transportation
+CTAS,Cintas,資本財,Diversified Support Services
+CTSH,Cognizant,情報技術,IT Consulting & Other Services
+CVNA,Carvana,一般消費財,Automotive Retail
+CVS,CVS Health,ヘルスケア,Health Care Services
+CVX,Chevron Corporation,エネルギー,Integrated Oil & Gas
+D,Dominion Energy,公益,Multi-Utilities
+DAL,Delta Air Lines,資本財,Passenger Airlines
+DASH,DoorDash,一般消費財,Specialized Consumer Services
+DD,DuPont,資本財,Industrial Conglomerates
+DDOG,Datadog,情報技術,Application Software
+DE,Deere & Company,資本財,Agricultural & Farm Machinery
+DECK,Deckers Brands,一般消費財,Footwear
+DELL,Dell Technologies,情報技術,"Technology Hardware, Storage & Peripherals"
+DG,Dollar General,生活必需品,Consumer Staples Merchandise Retail
+DGX,Quest Diagnostics,ヘルスケア,Health Care Services
+DHI,D. R. Horton,一般消費財,Homebuilding
+DHR,Danaher Corporation,ヘルスケア,Life Sciences Tools & Services
+DIS,Walt Disney Company (The),通信サービス,Movies & Entertainment
+DLR,Digital Realty,不動産,Data Center REITs
+DLTR,Dollar Tree,生活必需品,Consumer Staples Merchandise Retail
+DOC,Healthpeak Properties,不動産,Health Care REITs
+DOV,Dover Corporation,資本財,Industrial Machinery & Supplies & Components
+DOW,Dow Inc.,素材,Commodity Chemicals
+DPZ,Domino's,一般消費財,Restaurants
+DRI,Darden Restaurants,一般消費財,Restaurants
+DTE,DTE Energy,公益,Multi-Utilities
+DUK,Duke Energy,公益,Electric Utilities
+DVA,DaVita,ヘルスケア,Health Care Services
+DVN,Devon Energy,エネルギー,Oil & Gas Exploration & Production
+DXCM,Dexcom,ヘルスケア,Health Care Equipment
+EBAY,eBay Inc.,一般消費財,Broadline Retail
+ECHO,EchoStar,通信サービス,Wireless Telecommunication Services
+ECL,Ecolab,素材,Specialty Chemicals
+ED,Consolidated Edison,公益,Multi-Utilities
+EFX,Equifax,資本財,Research & Consulting Services
+EG,Everest Group,金融,Reinsurance
+EIX,Edison International,公益,Electric Utilities
+EL,Estée Lauder Companies (The),生活必需品,Personal Care Products
+ELV,Elevance Health,ヘルスケア,Managed Health Care
+EME,Emcor,資本財,Construction & Engineering
+EMR,Emerson Electric,資本財,Electrical Components & Equipment
+EOG,EOG Resources,エネルギー,Oil & Gas Exploration & Production
+EQIX,Equinix,不動産,Data Center REITs
+EQT,EQT Corporation,エネルギー,Oil & Gas Exploration & Production
+ERIE,Erie Indemnity,金融,Insurance Brokers
+ES,Eversource Energy,公益,Electric Utilities
+ESS,Essex Property Trust,不動産,Multi-Family Residential REITs
+ETN,Eaton Corporation,資本財,Electrical Components & Equipment
+ETR,Entergy,公益,Electric Utilities
+EVRG,Evergy,公益,Electric Utilities
+EW,Edwards Lifesciences,ヘルスケア,Health Care Equipment
+EXC,Exelon,公益,Electric Utilities
+EXE,Expand Energy,エネルギー,Oil & Gas Exploration & Production
+EXPD,Expeditors International,資本財,Air Freight & Logistics
+EXPE,Expedia Group,一般消費財,"Hotels, Resorts & Cruise Lines"
+EXR,Extra Space Storage,不動産,Self-Storage REITs
+F,Ford Motor Company,一般消費財,Automobile Manufacturers
+FANG,Diamondback Energy,エネルギー,Oil & Gas Exploration & Production
+FAST,Fastenal,資本財,Trading Companies & Distributors
+FCX,Freeport-McMoRan,素材,Copper
+FDS,FactSet,金融,Financial Exchanges & Data
+FDX,FedEx,資本財,Air Freight & Logistics
+FDXF,FedEx Freight,資本財,Cargo Ground Transportation
+FE,FirstEnergy,公益,Electric Utilities
+FERG,Ferguson Enterprises,資本財,Trading Companies & Distributors
+FFIV,"F5, Inc.",情報技術,Communications Equipment
+FICO,Fair Isaac,情報技術,Application Software
+FIS,Fidelity National Information Services,金融,Transaction & Payment Processing Services
+FISV,Fiserv,金融,Transaction & Payment Processing Services
+FITB,Fifth Third Bancorp,金融,Regional Banks
+FIX,Comfort Systems USA,資本財,Construction & Engineering
+FLEX,Flex Ltd.,情報技術,Electronic Manufacturing Services
+FOX,Fox Corporation (Class B),通信サービス,Broadcasting
+FOXA,Fox Corporation (Class A),通信サービス,Broadcasting
+FRT,Federal Realty Investment Trust,不動産,Retail REITs
+FSLR,First Solar,情報技術,Semiconductors
+FTNT,Fortinet,情報技術,Systems Software
+FTV,Fortive,資本財,Industrial Machinery & Supplies & Components
+GD,General Dynamics,資本財,Aerospace & Defense
+GDDY,GoDaddy,情報技術,Internet Services & Infrastructure
+GE,GE Aerospace,資本財,Aerospace & Defense
+GEHC,GE HealthCare,ヘルスケア,Health Care Equipment
+GEN,Gen Digital,情報技術,Systems Software
+GEV,GE Vernova,資本財,Heavy Electrical Equipment
+GILD,Gilead Sciences,ヘルスケア,Biotechnology
+GIS,General Mills,生活必需品,Packaged Foods & Meats
+GL,Globe Life,金融,Life & Health Insurance
+GLW,Corning Inc.,情報技術,Electronic Components
+GM,General Motors,一般消費財,Automobile Manufacturers
+GNRC,Generac,資本財,Heavy Electrical Equipment
+GOOG,Alphabet Inc. (Class C),通信サービス,Interactive Media & Services
+GOOGL,Alphabet Inc. (Class A),通信サービス,Interactive Media & Services
+GPC,Genuine Parts Company,一般消費財,Distributors
+GPN,Global Payments,金融,Transaction & Payment Processing Services
+GRMN,Garmin,一般消費財,Consumer Electronics
+GS,Goldman Sachs,金融,Investment Banking & Brokerage
+GWW,W. W. Grainger,資本財,Industrial Machinery & Supplies & Components
+HAL,Halliburton,エネルギー,Oil & Gas Equipment & Services
+HAS,Hasbro,一般消費財,Leisure Products
+HBAN,Huntington Bancshares,金融,Regional Banks
+HCA,HCA Healthcare,ヘルスケア,Health Care Facilities
+HD,Home Depot (The),一般消費財,Home Improvement Retail
+HIG,Hartford (The),金融,Property & Casualty Insurance
+HII,Huntington Ingalls Industries,資本財,Aerospace & Defense
+HLT,Hilton Worldwide,一般消費財,"Hotels, Resorts & Cruise Lines"
+HON,Honeywell Technologies,資本財,Industrial Conglomerates
+HONA,Honeywell Aerospace,資本財,Aerospace & Defense
+HOOD,Robinhood Markets,金融,Investment Banking & Brokerage
+HPE,Hewlett Packard Enterprise,情報技術,"Technology Hardware, Storage & Peripherals"
+HPQ,HP Inc.,情報技術,"Technology Hardware, Storage & Peripherals"
+HRL,Hormel Foods,生活必需品,Packaged Foods & Meats
+HSIC,Henry Schein,ヘルスケア,Health Care Distributors
+HST,Host Hotels & Resorts,不動産,Hotel & Resort REITs
+HSY,Hershey Company (The),生活必需品,Packaged Foods & Meats
+HUBB,Hubbell Incorporated,資本財,Industrial Machinery & Supplies & Components
+HUM,Humana,ヘルスケア,Managed Health Care
+HWM,Howmet Aerospace,資本財,Aerospace & Defense
+IBKR,Interactive Brokers,金融,Investment Banking & Brokerage
+IBM,IBM,情報技術,IT Consulting & Other Services
+ICE,Intercontinental Exchange,金融,Financial Exchanges & Data
+IDXX,Idexx Laboratories,ヘルスケア,Health Care Equipment
+IEX,IDEX Corporation,資本財,Industrial Machinery & Supplies & Components
+IFF,International Flavors & Fragrances,素材,Specialty Chemicals
+ILMN,"Illumina, Inc.",ヘルスケア,Life Sciences Tools & Services
+INCY,Incyte,ヘルスケア,Biotechnology
+INTC,Intel,情報技術,Semiconductors
+INTU,Intuit,情報技術,Application Software
+INVH,Invitation Homes,不動産,Single-Family Residential REITs
+IP,International Paper,素材,Paper & Plastic Packaging Products & Materials
+IQV,IQVIA,ヘルスケア,Life Sciences Tools & Services
+IR,Ingersoll Rand,資本財,Industrial Machinery & Supplies & Components
+IRM,Iron Mountain,不動産,Other Specialized REITs
+ISRG,Intuitive Surgical,ヘルスケア,Health Care Equipment
+IT,Gartner,情報技術,IT Consulting & Other Services
+ITW,Illinois Tool Works,資本財,Industrial Machinery & Supplies & Components
+IVZ,Invesco,金融,Asset Management & Custody Banks
+J,Jacobs Solutions,資本財,Construction & Engineering
+JBHT,J.B. Hunt,資本財,Cargo Ground Transportation
+JBL,Jabil,情報技術,Electronic Manufacturing Services
+JCI,Johnson Controls,資本財,Building Products
+JKHY,Jack Henry & Associates,金融,Transaction & Payment Processing Services
+JNJ,Johnson & Johnson,ヘルスケア,Pharmaceuticals
+JPM,JPMorgan Chase,金融,Diversified Banks
+KDP,Keurig Dr Pepper,生活必需品,Soft Drinks & Non-alcoholic Beverages
+KEY,KeyCorp,金融,Regional Banks
+KEYS,Keysight Technologies,情報技術,Electronic Equipment & Instruments
+KHC,Kraft Heinz,生活必需品,Packaged Foods & Meats
+KIM,Kimco Realty,不動産,Retail REITs
+KKR,KKR & Co.,金融,Asset Management & Custody Banks
+KLAC,KLA Corporation,情報技術,Semiconductor Materials & Equipment
+KMB,Kimberly-Clark,生活必需品,Household Products
+KMI,Kinder Morgan,エネルギー,Oil & Gas Storage & Transportation
+KO,Coca-Cola Company (The),生活必需品,Soft Drinks & Non-alcoholic Beverages
+KR,Kroger,生活必需品,Food Retail
+L,Loews Corporation,金融,Multi-line Insurance
+LDOS,Leidos,資本財,Diversified Support Services
+LEN,Lennar,一般消費財,Homebuilding
+LH,Labcorp,ヘルスケア,Health Care Services
+LHX,L3Harris,資本財,Aerospace & Defense
+LII,Lennox International,資本財,Building Products
+LIN,Linde plc,素材,Industrial Gases
+LITE,Lumentum,情報技術,Communications Equipment
+LLY,Lilly (Eli),ヘルスケア,Pharmaceuticals
+LMT,Lockheed Martin,資本財,Aerospace & Defense
+LNT,Alliant Energy,公益,Electric Utilities
+LOW,Lowe's,一般消費財,Home Improvement Retail
+LRCX,Lam Research,情報技術,Semiconductor Materials & Equipment
+LULU,Lululemon Athletica,一般消費財,"Apparel, Accessories & Luxury Goods"
+LUV,Southwest Airlines,資本財,Passenger Airlines
+LVS,Las Vegas Sands,一般消費財,Casinos & Gaming
+LYB,LyondellBasell,素材,Specialty Chemicals
+LYV,Live Nation Entertainment,通信サービス,Movies & Entertainment
+MA,Mastercard,金融,Transaction & Payment Processing Services
+MAA,Mid-America Apartment Communities,不動産,Multi-Family Residential REITs
+MAR,Marriott International,一般消費財,"Hotels, Resorts & Cruise Lines"
+MAS,Masco,資本財,Building Products
+MCD,McDonald's,一般消費財,Restaurants
+MCHP,Microchip Technology,情報技術,Semiconductors
+MCK,McKesson,ヘルスケア,Health Care Distributors
+MCO,Moody's Corporation,金融,Financial Exchanges & Data
+MDLZ,Mondelez International,生活必需品,Packaged Foods & Meats
+MDT,Medtronic,ヘルスケア,Health Care Equipment
+MET,MetLife,金融,Life & Health Insurance
+META,Meta Platforms,通信サービス,Interactive Media & Services
+MGM,MGM Resorts,一般消費財,Casinos & Gaming
+MKC,McCormick & Company,生活必需品,Packaged Foods & Meats
+MLM,Martin Marietta Materials,素材,Construction Materials
+MMM,3M,資本財,Industrial Conglomerates
+MNST,Monster Beverage,生活必需品,Soft Drinks & Non-alcoholic Beverages
+MO,Altria,生活必需品,Tobacco
+MOS,Mosaic Company (The),素材,Fertilizers & Agricultural Chemicals
+MPC,Marathon Petroleum,エネルギー,Oil & Gas Refining & Marketing
+MPWR,Monolithic Power Systems,情報技術,Semiconductors
+MRK,Merck & Co.,ヘルスケア,Pharmaceuticals
+MRNA,Moderna,ヘルスケア,Biotechnology
+MRSH,Marsh McLennan,金融,Insurance Brokers
+MRVL,Marvell Technology,情報技術,Semiconductors
+MS,Morgan Stanley,金融,Investment Banking & Brokerage
+MSCI,MSCI,金融,Financial Exchanges & Data
+MSFT,Microsoft,情報技術,Systems Software
+MSI,Motorola Solutions,情報技術,Communications Equipment
+MTB,M&T Bank,金融,Regional Banks
+MTD,Mettler Toledo,ヘルスケア,Life Sciences Tools & Services
+MU,Micron Technology,情報技術,Semiconductors
+NCLH,Norwegian Cruise Line Holdings,一般消費財,"Hotels, Resorts & Cruise Lines"
+NDAQ,"Nasdaq, Inc.",金融,Financial Exchanges & Data
+NDSN,Nordson Corporation,資本財,Industrial Machinery & Supplies & Components
+NEE,NextEra Energy,公益,Multi-Utilities
+NEM,Newmont,素材,Gold
+NFLX,Netflix,通信サービス,Movies & Entertainment
+NI,NiSource,公益,Multi-Utilities
+NKE,"Nike, Inc.",一般消費財,"Apparel, Accessories & Luxury Goods"
+NOC,Northrop Grumman,資本財,Aerospace & Defense
+NOW,ServiceNow,情報技術,Systems Software
+NRG,NRG Energy,公益,Independent Power Producers & Energy Traders
+NSC,Norfolk Southern,資本財,Rail Transportation
+NTAP,NetApp,情報技術,"Technology Hardware, Storage & Peripherals"
+NTRS,Northern Trust,金融,Asset Management & Custody Banks
+NUE,Nucor,素材,Steel
+NVDA,Nvidia,情報技術,Semiconductors
+NVR,"NVR, Inc.",一般消費財,Homebuilding
+NWS,News Corp (Class B),通信サービス,Publishing
+NWSA,News Corp (Class A),通信サービス,Publishing
+NXPI,NXP Semiconductors,情報技術,Semiconductors
+O,Realty Income,不動産,Retail REITs
+ODFL,Old Dominion,資本財,Cargo Ground Transportation
+OKE,Oneok,エネルギー,Oil & Gas Storage & Transportation
+OKTA,"Okta, Inc.",情報技術,Application Software
+OMC,Omnicom Group,通信サービス,Advertising
+ON,ON Semiconductor,情報技術,Semiconductors
+ORCL,Oracle Corporation,情報技術,Application Software
+ORLY,O'Reilly Automotive,一般消費財,Automotive Retail
+OTIS,Otis Worldwide,資本財,Industrial Machinery & Supplies & Components
+OXY,Occidental Petroleum,エネルギー,Oil & Gas Exploration & Production
+P,Everpure,情報技術,"Technology Hardware, Storage & Peripherals"
+PANW,Palo Alto Networks,情報技術,Systems Software
+PAYX,Paychex,資本財,Human Resource & Employment Services
+PCAR,Paccar,資本財,Construction Machinery & Heavy Transportation Equipment
+PCG,PG&E Corporation,公益,Multi-Utilities
+PEG,Public Service Enterprise Group,公益,Electric Utilities
+PEP,PepsiCo,生活必需品,Soft Drinks & Non-alcoholic Beverages
+PFE,Pfizer,ヘルスケア,Pharmaceuticals
+PFG,Principal Financial Group,金融,Life & Health Insurance
+PG,Procter & Gamble,生活必需品,Personal Care Products
+PGR,Progressive Corporation,金融,Property & Casualty Insurance
+PH,Parker Hannifin,資本財,Industrial Machinery & Supplies & Components
+PHM,PulteGroup,一般消費財,Homebuilding
+PKG,Packaging Corporation of America,素材,Paper & Plastic Packaging Products & Materials
+PLD,Prologis,不動産,Industrial REITs
+PLTR,Palantir Technologies,情報技術,Application Software
+PM,Philip Morris International,生活必需品,Tobacco
+PNC,PNC Financial Services,金融,Diversified Banks
+PNR,Pentair,資本財,Industrial Machinery & Supplies & Components
+PNW,Pinnacle West Capital,公益,Multi-Utilities
+PODD,Insulet Corporation,ヘルスケア,Health Care Equipment
+PPG,PPG Industries,素材,Specialty Chemicals
+PPL,PPL Corporation,公益,Electric Utilities
+PRU,Prudential Financial,金融,Life & Health Insurance
+PSA,Public Storage,不動産,Self-Storage REITs
+PSX,Phillips 66,エネルギー,Oil & Gas Refining & Marketing
+PTC,PTC Inc.,情報技術,Application Software
+PWR,Quanta Services,資本財,Construction & Engineering
+PYPL,PayPal,金融,Transaction & Payment Processing Services
+Q,Qnity Electronics,情報技術,Semiconductor Materials & Equipment
+QCOM,Qualcomm,情報技術,Semiconductors
+RCL,Royal Caribbean Group,一般消費財,"Hotels, Resorts & Cruise Lines"
+RDDT,Reddit,通信サービス,Interactive Media & Services
+REG,Regency Centers,不動産,Retail REITs
+REGN,Regeneron Pharmaceuticals,ヘルスケア,Biotechnology
+RF,Regions Financial Corporation,金融,Regional Banks
+RJF,Raymond James Financial,金融,Investment Banking & Brokerage
+RL,Ralph Lauren Corporation,一般消費財,"Apparel, Accessories & Luxury Goods"
+RMD,ResMed,ヘルスケア,Health Care Equipment
+ROK,Rockwell Automation,資本財,Electrical Components & Equipment
+ROL,"Rollins, Inc.",資本財,Environmental & Facilities Services
+ROP,Roper Technologies,情報技術,Electronic Equipment & Instruments
+ROST,Ross Stores,一般消費財,Apparel Retail
+RSG,Republic Services,資本財,Environmental & Facilities Services
+RTX,RTX Corporation,資本財,Aerospace & Defense
+RVTY,Revvity,ヘルスケア,Health Care Equipment
+SBAC,SBA Communications,不動産,Telecom Tower REITs
+SBUX,Starbucks,一般消費財,Restaurants
+SCHW,Charles Schwab Corporation,金融,Investment Banking & Brokerage
+SHW,Sherwin-Williams,素材,Specialty Chemicals
+SJM,J.M. Smucker Company (The),生活必需品,Packaged Foods & Meats
+SKYD,Skydance,通信サービス,Movies & Entertainment
+SLB,Schlumberger,エネルギー,Oil & Gas Equipment & Services
+SMCI,Supermicro,情報技術,"Technology Hardware, Storage & Peripherals"
+SNA,Snap-on,資本財,Industrial Machinery & Supplies & Components
+SNDK,Sandisk,情報技術,"Technology Hardware, Storage & Peripherals"
+SNPS,Synopsys,情報技術,Application Software
+SO,Southern Company,公益,Electric Utilities
+SOLV,Solventum,ヘルスケア,Health Care Technology
+SPG,Simon Property Group,不動産,Retail REITs
+SPGI,S&P Global,金融,Financial Exchanges & Data
+SRE,Sempra,公益,Multi-Utilities
+STE,Steris,ヘルスケア,Health Care Equipment
+STLD,Steel Dynamics,素材,Steel
+STT,State Street Corporation,金融,Asset Management & Custody Banks
+STX,Seagate Technology,情報技術,"Technology Hardware, Storage & Peripherals"
+STZ,Constellation Brands,生活必需品,Distillers & Vintners
+SW,Smurfit Westrock,素材,Paper & Plastic Packaging Products & Materials
+SWK,Stanley Black & Decker,資本財,Industrial Machinery & Supplies & Components
+SWKS,Skyworks Solutions,情報技術,Semiconductors
+SYF,Synchrony Financial,金融,Consumer Finance
+SYK,Stryker Corporation,ヘルスケア,Health Care Equipment
+SYY,Sysco,生活必需品,Food Distributors
+T,AT&T,通信サービス,Integrated Telecommunication Services
+TDG,TransDigm Group,資本財,Aerospace & Defense
+TDY,Teledyne Technologies,情報技術,Electronic Equipment & Instruments
+TECH,Bio-Techne,ヘルスケア,Life Sciences Tools & Services
+TEL,TE Connectivity,情報技術,Electronic Manufacturing Services
+TER,Teradyne,情報技術,Semiconductor Materials & Equipment
+TFC,Truist Financial,金融,Diversified Banks
+TGT,Target Corporation,生活必需品,Consumer Staples Merchandise Retail
+TJX,TJX Companies,一般消費財,Apparel Retail
+TKO,TKO Group Holdings,通信サービス,Movies & Entertainment
+TMO,Thermo Fisher Scientific,ヘルスケア,Life Sciences Tools & Services
+TMUS,T-Mobile US,通信サービス,Wireless Telecommunication Services
+TPL,Texas Pacific Land Corporation,エネルギー,Oil & Gas Exploration & Production
+TPR,"Tapestry, Inc.",一般消費財,"Apparel, Accessories & Luxury Goods"
+TRGP,Targa Resources,エネルギー,Oil & Gas Storage & Transportation
+TRMB,Trimble Inc.,情報技術,Application Software
+TROW,T. Rowe Price,金融,Asset Management & Custody Banks
+TRV,Travelers Companies (The),金融,Property & Casualty Insurance
+TSCO,Tractor Supply,一般消費財,Other Specialty Retail
+TSLA,"Tesla, Inc.",一般消費財,Automobile Manufacturers
+TSN,Tyson Foods,生活必需品,Packaged Foods & Meats
+TT,Trane Technologies,資本財,Building Products
+TTWO,Take-Two Interactive,通信サービス,Interactive Home Entertainment
+TWLO,Twilio,情報技術,Systems Software
+TXN,Texas Instruments,情報技術,Semiconductors
+TXT,Textron,資本財,Aerospace & Defense
+TYL,Tyler Technologies,情報技術,Application Software
+UAL,United Airlines Holdings,資本財,Passenger Airlines
+UBER,Uber,資本財,Passenger Ground Transportation
+UDR,"UDR, Inc.",不動産,Multi-Family Residential REITs
+UHS,Universal Health Services,ヘルスケア,Health Care Facilities
+ULTA,Ulta Beauty,一般消費財,Other Specialty Retail
+UNH,UnitedHealth Group,ヘルスケア,Managed Health Care
+UNP,Union Pacific Corporation,資本財,Rail Transportation
+UPS,United Parcel Service,資本財,Air Freight & Logistics
+URI,United Rentals,資本財,Trading Companies & Distributors
+USB,U.S. Bancorp,金融,Diversified Banks
+V,Visa Inc.,金融,Transaction & Payment Processing Services
+VEEV,Veeva Systems,ヘルスケア,Health Care Technology
+VICI,Vici Properties,不動産,Hotel & Resort REITs
+VLO,Valero Energy,エネルギー,Oil & Gas Refining & Marketing
+VLTO,Veralto,資本財,Environmental & Facilities Services
+VMC,Vulcan Materials Company,素材,Construction Materials
+VMRK,Vivmark Residential,不動産,Multi-Family Residential REITs
+VRSK,Verisk Analytics,資本財,Research & Consulting Services
+VRSN,Verisign,情報技術,Internet Services & Infrastructure
+VRT,Vertiv,資本財,Electrical Components & Equipment
+VRTX,Vertex Pharmaceuticals,ヘルスケア,Biotechnology
+VST,Vistra Corp.,公益,Electric Utilities
+VTR,Ventas,不動産,Health Care REITs
+VTRS,Viatris,ヘルスケア,Pharmaceuticals
+VYLR,Vylor,生活必需品,Agricultural Products & Services
+VZ,Verizon,通信サービス,Integrated Telecommunication Services
+WAB,Wabtec,資本財,Construction Machinery & Heavy Transportation Equipment
+WAT,Waters Corporation,ヘルスケア,Life Sciences Tools & Services
+WDAY,"Workday, Inc.",情報技術,Application Software
+WDC,Western Digital,情報技術,"Technology Hardware, Storage & Peripherals"
+WEC,WEC Energy Group,公益,Electric Utilities
+WELL,Welltower,不動産,Health Care REITs
+WFC,Wells Fargo,金融,Diversified Banks
+WM,Waste Management,資本財,Environmental & Facilities Services
+WMB,Williams Companies,エネルギー,Oil & Gas Storage & Transportation
+WMT,Walmart,生活必需品,Consumer Staples Merchandise Retail
+WRB,W. R. Berkley Corporation,金融,Property & Casualty Insurance
+WSM,"Williams-Sonoma, Inc.",一般消費財,Homefurnishing Retail
+WST,West Pharmaceutical Services,ヘルスケア,Health Care Supplies
+WTW,Willis Towers Watson,金融,Insurance Brokers
+WY,Weyerhaeuser,不動産,Timber REITs
+WYNN,Wynn Resorts,一般消費財,Casinos & Gaming
+XEL,Xcel Energy,公益,Multi-Utilities
+XOM,ExxonMobil,エネルギー,Integrated Oil & Gas
+XYL,Xylem Inc.,資本財,Industrial Machinery & Supplies & Components
+XYZ,"Block, Inc.",金融,Transaction & Payment Processing Services
+YUM,Yum! Brands,一般消費財,Restaurants
+ZBH,Zimmer Biomet,ヘルスケア,Health Care Equipment
+ZBRA,Zebra Technologies,情報技術,Electronic Equipment & Instruments
+ZTS,Zoetis,ヘルスケア,Pharmaceuticals

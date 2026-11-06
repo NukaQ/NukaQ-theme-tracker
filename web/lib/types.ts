@@ -19,6 +19,9 @@ export interface Group {
 
 export interface Stock {
   name: string;
+  sector?: string | null; // 指数一覧の業種（米国株はGICSセクター）
+  industry?: string | null;
+  inIndex?: boolean; // S&P500 / 日経225 の構成銘柄か
   missing?: boolean;
   close?: number;
   returns?: Returns;

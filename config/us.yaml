@@ -1,12 +1,25 @@
 # 米国株のテーマ定義
 # 階層: セクター > サブセクター > 大テーマ > テーマ > 銘柄
-# 銘柄は「ティッカー: 表示名」で書く。同じ銘柄を複数テーマに入れてもよい。
+#
+# tickers の書き方:
+#   [NVDA, AMD]                 銘柄名は config/universe/us.csv（S&P500一覧）から自動で付く
+#   [NVDA, {ARM: Arm}]          S&P500以外の銘柄は「ティッカー: 表示名」で書く
+# 同じ銘柄を複数テーマに入れてもよい。どのテーマにも入らない銘柄も「銘柄」ページには表示される。
 market: us
 name: 米国株
 currency: USD
 benchmarks:
   SPY: S&P500 (SPY)
   QQQ: NASDAQ100 (QQQ)
+# 表示名の上書き（S&P500一覧の正式名が長いもの）
+names:
+  GOOGL: Alphabet
+  META: Meta
+  NVDA: NVIDIA
+  AMD: AMD
+  BRK-B: Berkshire Hathaway
+  LLY: Eli Lilly
+  TSM: TSMC
 sectors:
   - name: テクノロジー
     subsectors:
@@ -15,43 +28,85 @@ sectors:
           - name: AI半導体
             themes:
               - name: GPU・AIアクセラレータ
-                tickers: {NVDA: NVIDIA, AMD: AMD, AVGO: Broadcom, MRVL: Marvell, ARM: Arm}
-              - name: メモリ
-                tickers: {MU: Micron, WDC: Western Digital, STX: Seagate, SNDK: SanDisk}
+                tickers: [NVDA, AMD, AVGO, MRVL, {ARM: Arm}]
+              - name: メモリ・ストレージ
+                tickers: [MU, SNDK, WDC, STX, NTAP, P]
           - name: 半導体サプライチェーン
             themes:
               - name: 半導体製造装置
-                tickers: {AMAT: Applied Materials, LRCX: Lam Research, KLAC: KLA, ASML: ASML, TER: Teradyne}
+                tickers: [AMAT, LRCX, KLAC, TER, Q, {ASML: ASML}]
               - name: ファウンドリ
-                tickers: {TSM: TSMC, INTC: Intel, GFS: GlobalFoundries, UMC: UMC}
+                tickers: [{TSM: TSMC}, INTC, {GFS: GlobalFoundries}]
+              - name: 半導体設計ソフト(EDA)
+                tickers: [SNPS, CDNS]
+          - name: 汎用半導体
+            themes:
+              - name: アナログ・パワー半導体
+                tickers: [TXN, ADI, MCHP, NXPI, "ON", MPWR]
+              - name: スマホ関連
+                tickers: [AAPL, QCOM, SWKS, GLW]
       - name: ネットワーク・ハードウェア
         bigThemes:
           - name: データセンター接続
             themes:
               - name: 光接続
-                tickers: {COHR: Coherent, LITE: Lumentum, AAOI: Applied Optoelectronics, CIEN: Ciena, FN: Fabrinet}
+                tickers: [COHR, LITE, CIEN, GLW, {FN: Fabrinet}, {AAOI: Applied Optoelectronics}]
               - name: データセンターネットワーク
-                tickers: {ANET: Arista Networks, CSCO: Cisco, CRDO: Credo, ALAB: Astera Labs}
+                tickers: [ANET, CSCO, FFIV, {CRDO: Credo}, {ALAB: Astera Labs}]
+              - name: コネクタ・電子部品
+                tickers: [APH, TEL, GLW]
           - name: AIインフラ機器
             themes:
-              - name: AIサーバー
-                tickers: {SMCI: Super Micro, DELL: Dell, HPE: HPE}
+              - name: AIサーバー・受託製造
+                tickers: [SMCI, DELL, HPE, FLEX, JBL]
               - name: 量子コンピューター
-                tickers: {IONQ: IonQ, RGTI: Rigetti, QBTS: D-Wave, QUBT: Quantum Computing}
+                tickers: [{IONQ: IonQ}, {RGTI: Rigetti}, {QBTS: D-Wave}, {QUBT: Quantum Computing}]
+          - name: 電子機器
+            themes:
+              - name: 計測・電子機器
+                tickers: [KEYS, TDY, ZBRA, TRMB, GRMN]
       - name: ソフトウェア
         bigThemes:
           - name: AIソフトウェア
             themes:
               - name: ハイパースケーラー
-                tickers: {MSFT: Microsoft, GOOGL: Alphabet, AMZN: Amazon, META: Meta, ORCL: Oracle}
+                tickers: [MSFT, GOOGL, AMZN, META, ORCL]
               - name: AIアプリケーション
-                tickers: {PLTR: Palantir, SNOW: Snowflake, DDOG: Datadog, MDB: MongoDB}
+                tickers: [PLTR, APP, DDOG, {SNOW: Snowflake}, {MDB: MongoDB}]
           - name: エンタープライズ
             themes:
               - name: サイバーセキュリティ
-                tickers: {CRWD: CrowdStrike, PANW: Palo Alto, ZS: Zscaler, FTNT: Fortinet, NET: Cloudflare}
+                tickers: [CRWD, PANW, FTNT, OKTA, GEN, AKAM, {ZS: Zscaler}, {NET: Cloudflare}]
               - name: SaaS
-                tickers: {CRM: Salesforce, NOW: ServiceNow, ADBE: Adobe, WDAY: Workday, HUBS: HubSpot}
+                tickers: [CRM, NOW, ADBE, WDAY, INTU, ADSK, TYL, PTC, VEEV, TWLO, ROP, {HUBS: HubSpot}]
+              - name: ITサービス・コンサル
+                tickers: [ACN, IBM, CTSH, IT, CDW, GDDY, VRSN]
+  - name: 通信・メディア
+    subsectors:
+      - name: インターネット
+        bigThemes:
+          - name: ネットプラットフォーム
+            themes:
+              - name: ネット広告・SNS
+                tickers: [GOOGL, META, RDDT, APP, OMC, {TTD: The Trade Desk}]
+              - name: Eコマース・配達
+                tickers: [AMZN, EBAY, DASH, CVNA, {SHOP: Shopify}]
+              - name: ライドシェア
+                tickers: [UBER, {LYFT: Lyft}]
+      - name: メディア・通信
+        bigThemes:
+          - name: エンタメ
+            themes:
+              - name: 動画配信・エンタメ
+                tickers: [NFLX, DIS, SKYD, LYV, TKO, FOXA, NWSA]
+              - name: ゲーム
+                tickers: [TTWO, {RBLX: Roblox}, {EA: Electronic Arts}]
+          - name: 通信インフラ
+            themes:
+              - name: 通信キャリア・ケーブル
+                tickers: [T, VZ, TMUS, CMCSA, CHTR, ECHO]
+              - name: 通信塔REIT
+                tickers: [AMT, CCI, SBAC]
   - name: 資本財・エネルギー
     subsectors:
       - name: 電力
@@ -59,40 +114,226 @@ sectors:
           - name: AI電力需要
             themes:
               - name: 電力インフラ
-                tickers: {VRT: Vertiv, ETN: Eaton, GEV: GE Vernova, PWR: Quanta Services}
+                tickers: [VRT, ETN, GEV, PWR, HUBB, EME, FIX]
               - name: 原子力
-                tickers: {CEG: Constellation, VST: Vistra, OKLO: Oklo, SMR: NuScale, CCJ: Cameco, BWXT: BWX Technologies}
+                tickers: [CEG, VST, {OKLO: Oklo}, {SMR: NuScale}, {CCJ: Cameco}, {BWXT: BWX Technologies}]
+              - name: 独立系発電
+                tickers: [VST, NRG, CEG, AES, {TLN: Talen Energy}]
+              - name: 分散電源・燃料電池
+                tickers: [BE, GNRC, CMI]
+              - name: 太陽光
+                tickers: [FSLR, {ENPH: Enphase}, {NXT: Nextracker}]
+          - name: 電力会社
+            themes:
+              - name: 電力・ガス公益
+                tickers: [NEE, SO, DUK, AEP, D, EXC, XEL, ETR, PCG, ED, PEG, EIX, WEC, ES, DTE, FE, PPL, AEE, CMS, CNP, LNT, EVRG, NI, PNW, SRE, ATO]
+              - name: 水インフラ
+                tickers: [AWK, XYL, PNR, VLTO]
       - name: 航空宇宙・防衛
         bigThemes:
           - name: 安全保障
             themes:
               - name: 防衛
-                tickers: {LMT: Lockheed Martin, RTX: RTX, NOC: Northrop Grumman, GD: General Dynamics, LHX: L3Harris}
+                tickers: [LMT, RTX, NOC, GD, LHX, HII, LDOS]
               - name: 宇宙
-                tickers: {RKLB: Rocket Lab, ASTS: AST SpaceMobile, PL: Planet Labs, LUNR: Intuitive Machines}
+                tickers: [{RKLB: Rocket Lab}, {ASTS: AST SpaceMobile}, {PL: Planet Labs}, {LUNR: Intuitive Machines}]
+              - name: 治安・公共安全
+                tickers: [AXON, MSI]
+          - name: 民間航空
+            themes:
+              - name: 航空機・部品
+                tickers: [BA, GE, HWM, TDG, TXT, HONA]
+              - name: 航空会社
+                tickers: [DAL, UAL, LUV]
+      - name: 機械・設備
+        bigThemes:
+          - name: 産業機械
+            themes:
+              - name: 建機・農機・トラック
+                tickers: [CAT, DE, PCAR, CMI, WAB, URI]
+              - name: 産業オートメーション
+                tickers: [ROK, EMR, AME, PH, ITW, DOV, IR, FTV, IEX, NDSN, SNA, SWK, OTIS, HON, MMM]
+              - name: 空調・ビル設備
+                tickers: [CARR, TT, JCI, LII, AOS, ALLE, MAS]
+          - name: 産業サービス
+            themes:
+              - name: 産業商社
+                tickers: [GWW, FAST, FERG]
+              - name: 環境サービス
+                tickers: [WM, RSG, ROL, CTAS]
+              - name: 人材・給与計算
+                tickers: [ADP, PAYX]
+      - name: 運輸
+        bigThemes:
+          - name: 物流
+            themes:
+              - name: 物流・宅配
+                tickers: [UPS, FDX, FDXF, CHRW, EXPD, JBHT, ODFL]
+              - name: 鉄道
+                tickers: [UNP, CSX, NSC]
+      - name: エネルギー
+        bigThemes:
+          - name: 石油・ガス
+            themes:
+              - name: 石油メジャー
+                tickers: [XOM, CVX]
+              - name: 石油・ガス開発
+                tickers: [COP, EOG, OXY, DVN, FANG, APA, TPL]
+              - name: 天然ガス・パイプライン
+                tickers: [EQT, EXE, KMI, WMB, OKE, TRGP]
+              - name: 石油サービス
+                tickers: [SLB, HAL, BKR]
+              - name: 石油精製
+                tickers: [MPC, PSX, VLO]
+  - name: 素材
+    subsectors:
+      - name: 素材
+        bigThemes:
+          - name: 資源
+            themes:
+              - name: 金・銅
+                tickers: [NEM, FCX]
+              - name: 鉄鋼
+                tickers: [NUE, STLD]
+              - name: リチウム
+                tickers: [ALB]
+          - name: 化学・建材
+            themes:
+              - name: 化学
+                tickers: [DOW, LYB, DD, PPG, SHW, ECL, IFF]
+              - name: 産業ガス
+                tickers: [LIN, APD]
+              - name: 肥料・農業
+                tickers: [CF, MOS, ADM, BG, {CTVA: Corteva}]
+              - name: 建設資材
+                tickers: [VMC, MLM, CRH]
+              - name: 包装・容器
+                tickers: [IP, PKG, SW, AMCR, BALL, AVY]
   - name: ヘルスケア
     subsectors:
       - name: 医薬品
         bigThemes:
-          - name: 肥満症治療
+          - name: 新薬
             themes:
-              - name: GLP-1
-                tickers: {LLY: Eli Lilly, NVO: Novo Nordisk, VKTX: Viking Therapeutics}
-  - name: 一般消費財
-    subsectors:
-      - name: 自動車
+              - name: GLP-1（肥満症）
+                tickers: [LLY, {NVO: Novo Nordisk}, {VKTX: Viking Therapeutics}]
+              - name: 大手製薬
+                tickers: [JNJ, MRK, PFE, ABBV, BMY, AMGN, GILD, ZTS, VTRS]
+              - name: バイオテック
+                tickers: [VRTX, REGN, BIIB, MRNA, INCY]
+      - name: 医療機器・サービス
         bigThemes:
-          - name: 次世代モビリティ
+          - name: 医療機器
             themes:
-              - name: EV
-                tickers: {TSLA: Tesla, RIVN: Rivian, LCID: Lucid}
+              - name: 医療機器
+                tickers: [ISRG, SYK, BSX, MDT, ABT, EW, ZBH, BDX, BAX, GEHC, STE, RMD, SOLV]
+              - name: 糖尿病デバイス
+                tickers: [DXCM, PODD]
+              - name: ライフサイエンス機器
+                tickers: [TMO, DHR, A, WAT, MTD, IQV, ILMN, CRL, TECH, RVTY, IDXX, WST]
+          - name: 医療サービス
+            themes:
+              - name: 医療保険
+                tickers: [UNH, ELV, CI, HUM, CNC, CVS]
+              - name: 医薬品卸
+                tickers: [MCK, COR, CAH, HSIC]
+              - name: 病院・検査
+                tickers: [HCA, UHS, DVA, LH, DGX]
   - name: 金融
     subsectors:
+      - name: 銀行・証券
+        bigThemes:
+          - name: 銀行
+            themes:
+              - name: 大手銀行
+                tickers: [JPM, BAC, C, WFC]
+              - name: 地方銀行
+                tickers: [PNC, USB, TFC, FITB, HBAN, KEY, MTB, RF, CFG]
+          - name: 資本市場
+            themes:
+              - name: 投資銀行・証券
+                tickers: [GS, MS, SCHW, IBKR, RJF]
+              - name: 資産運用・PE
+                tickers: [BX, KKR, APO, ARES, BLK, BNY, STT, NTRS, TROW, AMP, BEN, IVZ]
+              - name: 取引所・金融データ
+                tickers: [CME, ICE, NDAQ, CBOE, SPGI, MCO, MSCI, FDS, VRSK, EFX, FICO, BR]
+      - name: 保険
+        bigThemes:
+          - name: 保険
+            themes:
+              - name: 損害保険
+                tickers: [CB, PGR, TRV, ALL, AIG, HIG, CINF, WRB, ACGL, EG]
+              - name: 生命保険
+                tickers: [MET, PRU, AFL, PFG, GL]
+              - name: 保険ブローカー
+                tickers: [MRSH, AON, AJG, BRO, WTW]
       - name: 新しい金融
         bigThemes:
           - name: デジタル金融
             themes:
-              - name: 暗号資産関連
-                tickers: {COIN: Coinbase, MSTR: Strategy, HOOD: Robinhood, MARA: MARA Holdings, RIOT: Riot Platforms}
+              - name: 決済・カード
+                tickers: [V, MA, AXP, COF, SYF, FISV, FIS, GPN, CPAY, JKHY]
               - name: フィンテック
-                tickers: {SOFI: SoFi, AFRM: Affirm, PYPL: PayPal, XYZ: Block}
+                tickers: [PYPL, XYZ, HOOD, {SOFI: SoFi}, {AFRM: Affirm}]
+              - name: 暗号資産関連
+                tickers: [COIN, HOOD, {MSTR: Strategy}, {MARA: MARA Holdings}, {RIOT: Riot Platforms}]
+  - name: 消費
+    subsectors:
+      - name: 一般消費財
+        bigThemes:
+          - name: 自動車
+            themes:
+              - name: EV・自動車
+                tickers: [TSLA, GM, F, APTV, {RIVN: Rivian}, {LCID: Lucid}]
+              - name: 自動車部品・販売
+                tickers: [AZO, ORLY, GPC, CVNA]
+          - name: 旅行・レジャー
+            themes:
+              - name: 旅行・ホテル
+                tickers: [BKNG, ABNB, EXPE, MAR, HLT]
+              - name: クルーズ
+                tickers: [RCL, CCL, NCLH]
+              - name: カジノ
+                tickers: [LVS, WYNN, MGM]
+          - name: 生活
+            themes:
+              - name: 外食
+                tickers: [MCD, SBUX, CMG, YUM, DRI, DPZ]
+              - name: アパレル・靴
+                tickers: [NKE, LULU, TJX, ROST, RL, TPR, DECK]
+              - name: 住宅建設
+                tickers: [DHI, LEN, PHM, NVR]
+              - name: ホームセンター・家具
+                tickers: [HD, LOW, WSM]
+      - name: 生活必需品
+        bigThemes:
+          - name: 小売
+            themes:
+              - name: 大型小売
+                tickers: [WMT, COST, TGT, DG, DLTR, BBY, TSCO, ULTA, KR, CASY]
+          - name: 食品・日用品
+            themes:
+              - name: 飲料・酒
+                tickers: [KO, PEP, KDP, MNST, STZ, BF-B]
+              - name: 食品
+                tickers: [MDLZ, HSY, GIS, KHC, HRL, MKC, SJM, TSN, SYY]
+              - name: 日用品・化粧品
+                tickers: [PG, CL, KMB, CHD, CLX, EL]
+              - name: たばこ
+                tickers: [PM, MO]
+  - name: 不動産
+    subsectors:
+      - name: REIT
+        bigThemes:
+          - name: REIT
+            themes:
+              - name: データセンターREIT
+                tickers: [EQIX, DLR, IRM]
+              - name: 物流・倉庫REIT
+                tickers: [PLD, PSA, EXR]
+              - name: 住宅REIT
+                tickers: [CPT, ESS, MAA, UDR, INVH, VMRK]
+              - name: 商業施設REIT
+                tickers: [O, SPG, KIM, REG, FRT]
+              - name: ヘルスケアREIT
+                tickers: [WELL, VTR, DOC]
