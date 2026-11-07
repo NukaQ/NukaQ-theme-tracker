@@ -1,10 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { HeatCell, Pct, Sparkline, Star } from "@/components/ui";
+import { useAnalysisSummaries } from "@/lib/data";
 import { useFavorites } from "@/lib/favorites";
-import { fmtCap, fmtNum } from "@/lib/format";
-import { quoteUrl } from "@/lib/links";
+import { actionClass, fmtCap, fmtNum } from "@/lib/format";
+import { stockHref } from "@/lib/links";
 import { PERIODS, type Market, type Period, type Stock } from "@/lib/types";
 
 export interface StockRow {
@@ -15,6 +17,8 @@ export interface StockRow {
   themes?: string[];
 }
 
+const ACTION_SCORE: Record<string, number> = { 買い: 5, やや買い: 4, 中立: 3, やや売り: 2, 売り: 1 };
+
 type Col = { id: string; label: string; title?: string; get: (r: StockRow) => number | string | null | undefined; cls?: string };
 
 export default function StockTable({ rows, period, showThemes = false, showMarket = false }: {
@@ -24,9 +28,14 @@ export default function StockTable({ rows, period, showThemes = false, showMarke
   showMarket?: boolean;
 }) {
   const { fav, toggle } = useFavorites();
+  const ai = useAnalysisSummaries();
+  const sum = (r: StockRow) => ai[r.market][r.ticker];
   const [sort, setSort] = useState<{ id: string; asc: boolean }>({ id: `r:${period}`, asc: false });
 
   const cols: Col[] = [
+    { id: "stars", label: "AI評価", title: "AIによる総合評価（★5段階）", get: (r) => sum(r)?.stars },
+    { id: "action", label: "AI判断", title: "AIによる今後1〜3か月の判断", get: (r) => (sum(r) ? ACTION_SCORE[sum(r).action] : undefined) },
+    { id: "upside", label: "目標まで", title: "AIの目標株価までの上昇余地", get: (r) => sum(r)?.upside, cls: "hide-sm" },
     ...PERIODS.map((p) => ({ id: `r:${p}`, label: p, get: (r: StockRow) => r.stock.returns?.[p] })),
     { id: "cap", label: "時価総額", get: (r) => r.stock.marketCap, cls: "hide-sm" },
     { id: "high52", label: "高値から", title: "52週高値からの下落率", get: (r) => r.stock.high52, cls: "hide-sm" },
@@ -44,7 +53,7 @@ export default function StockTable({ rows, period, showThemes = false, showMarke
     };
     return [...rows].filter((r) => !r.stock.missing).sort((a, b) => (sort.asc ? val(a) - val(b) : val(b) - val(a)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows, sort]);
+  }, [rows, sort, ai]);
 
   const head = (c: Col) => (
     <th key={c.id} className={`num sortable ${c.cls ?? ""}${sort.id === c.id ? " sorted" : ""}`} title={c.title ?? "クリックで並べ替え"}
@@ -75,10 +84,10 @@ export default function StockTable({ rows, period, showThemes = false, showMarke
               <tr key={key}>
                 <td><Star on={fav.stocks.includes(key)} onClick={() => toggle("stocks", key)} label={s.name} /></td>
                 <td className="name-cell">
-                  <a href={quoteUrl(r.market, r.ticker)} target="_blank" rel="noreferrer">
+                  <Link href={stockHref(r.market, r.ticker)}>
                     <span className="ticker">{r.market === "jp" ? s.name : r.ticker}</span>{" "}
                     <span className="muted small">{r.market === "jp" ? r.ticker.replace(".T", "") : s.name}</span>
-                  </a>
+                  </Link>
                   {(showThemes || showMarket) && (
                     <span className="path">
                       {[
@@ -91,6 +100,9 @@ export default function StockTable({ rows, period, showThemes = false, showMarke
                 </td>
                 <td className="num hide-sm">{fmtNum(s.close, r.currency === "JPY" ? 0 : 2)}</td>
                 <td className="hide-sm">{s.spark && <Sparkline values={s.spark} width={70} height={22} />}</td>
+                <td className="num stars-cell">{sum(r) ? "★".repeat(sum(r).stars) : <span className="muted">—</span>}</td>
+                <td>{sum(r) ? <span className={`badge ${actionClass(sum(r).action)}`}>{sum(r).action}</span> : <span className="muted">—</span>}</td>
+                <td className="num hide-sm"><Pct v={sum(r)?.upside} /></td>
                 {PERIODS.map((p) => <HeatCell key={p} v={s.returns?.[p]} period={p} strong={sort.id === `r:${p}`} />)}
                 <td className="num hide-sm">
                   {fmtCap(s.marketCap, r.currency)}

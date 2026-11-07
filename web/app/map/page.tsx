@@ -6,7 +6,7 @@ import { Chips, Loading, MarketBar, PeriodChips } from "@/components/ui";
 import { useMarketData } from "@/lib/data";
 import { fmtCap, fmtPct, heat } from "@/lib/format";
 import { useViewParams, withView } from "@/lib/params";
-import { quoteUrl } from "@/lib/links";
+import { stockHref } from "@/lib/links";
 import { squarify } from "@/lib/treemap";
 import { LEVELS, MARKETS, type Group, type MarketData, type Period } from "@/lib/types";
 
@@ -100,7 +100,7 @@ function Treemap({ data, level, period, size }: { data: MarketData; level: Group
             const ems = [...label].reduce((n, ch) => n + (ch.charCodeAt(0) > 0xff ? 1 : 0.62), 0);
             const fs = Math.max(8, Math.min(22, Math.sqrt(t.w * t.h) / 5, (t.w - 6) / Math.max(ems, 1)));
             return (
-              <a key={t.item} className="tm-tile" href={quoteUrl(data.market, t.item)} target="_blank" rel="noreferrer"
+              <Link key={t.item} className="tm-tile" href={stockHref(data.market, t.item)}
                 style={{ left: t.x, top: t.y, width: t.w, height: t.h, background: heat(v, period), fontSize: fs }}
                 title={`${s.name} (${t.item})\n${period}: ${fmtPct(v, 2)}\n時価総額: ${fmtCap(s.marketCap, data.currency)}`}>
                 {t.w > 34 && t.h > 22 && (
@@ -109,7 +109,7 @@ function Treemap({ data, level, period, size }: { data: MarketData; level: Group
                     {t.h > fs * 2.6 && <span className="r" style={{ fontSize: fs * 0.75 }}>{fmtPct(v)}</span>}
                   </>
                 )}
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -130,7 +130,7 @@ function Legend({ period }: { period: Period }) {
           {fmtPct(s, 0)}
         </span>
       ))}
-      <span style={{ marginLeft: "auto" }}>タイルをクリックすると Yahoo!ファイナンスを開きます</span>
+      <span style={{ marginLeft: "auto" }}>タイルをクリックすると銘柄のAI解析を表示します</span>
     </div>
   );
 }

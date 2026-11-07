@@ -46,3 +46,8 @@ export function fmtDateTime(iso: string): string {
     timeZone: "Asia/Tokyo", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit",
   });
 }
+
+/** AIの売買判断に合わせた色の名前（CSSの .good / .bad / .neutral） */
+export function actionClass(a: string): string {
+  return a === "買い" || a === "やや買い" ? "good" : a === "売り" || a === "やや売り" ? "bad" : "neutral";
+}

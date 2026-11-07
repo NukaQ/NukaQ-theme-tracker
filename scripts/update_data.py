@@ -27,6 +27,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_DIR = ROOT / "config"
 OUT_DIR = ROOT / "web" / "public" / "data"
+STOCK_DIR = ROOT / "web" / "public" / "stock"  # 銘柄ごとの株価とテクニカル指標
 
 # 期間名 → 何営業日前と比べるか
 PERIODS = {"1D": 1, "5D": 5, "10D": 10, "1M": 21, "2M": 42, "3M": 63, "6M": 126, "1Y": 252}
@@ -383,6 +384,112 @@ def all_names(cfg: dict) -> tuple[list[dict], dict[str, str], dict[str, dict]]:
     return groups, names, universe
 
 
+# ---------------------------------------------------------------- テクニカル指標
+
+# 移動平均の日数（短期・中期・長期）。日本では25日・75日線がよく使われる。
+MA_WINDOWS = {"us": [20, 50, 200], "jp": [25, 75, 200]}
+CHART_DAYS = 252 + 200  # チャート1年分＋200日線の計算に必要な分
+
+
+def rsi(c: pd.Series, n: int = 14) -> pd.Series:
+    d = c.diff()
+    up = d.clip(lower=0).ewm(alpha=1 / n, adjust=False).mean()
+    down = (-d.clip(upper=0)).ewm(alpha=1 / n, adjust=False).mean()
+    return 100 - 100 / (1 + up / down.replace(0, np.nan))
+
+
+def technicals(c: pd.Series, v: pd.Series, market: str) -> dict:
+    """チャートの状態を数値でまとめる（AI解析の材料と、銘柄ページの表示に使う）。"""
+    c = c.dropna()
+    if len(c) < 30:
+        return {}
+    v = v.reindex(c.index)
+    last = float(c.iloc[-1])
+    short, mid, long_ = MA_WINDOWS[market]
+    ma = {n: c.rolling(n).mean() for n in (short, mid, long_)}
+
+    ema12, ema26 = c.ewm(span=12, adjust=False).mean(), c.ewm(span=26, adjust=False).mean()
+    macd = ema12 - ema26
+    signal = macd.ewm(span=9, adjust=False).mean()
+    hist = macd - signal
+    cross = None  # 直近5日でMACDがシグナルを上抜け/下抜けしたか
+    for i in range(1, min(6, len(hist))):
+        if hist.iloc[-i] > 0 >= hist.iloc[-i - 1]:
+            cross = f"{i - 1}日前にゴールデンクロス"
+            break
+        if hist.iloc[-i] < 0 <= hist.iloc[-i - 1]:
+            cross = f"{i - 1}日前にデッドクロス"
+            break
+
+    bb_mid = c.rolling(20).mean()
+    bb_sd = c.rolling(20).std()
+    bb_pos = (last - (bb_mid.iloc[-1] - 2 * bb_sd.iloc[-1])) / (4 * bb_sd.iloc[-1]) if bb_sd.iloc[-1] > 0 else None
+
+    # 中期線と長期線のクロス（直近30日）
+    ma_cross = None
+    diff = (ma[mid] - ma[long_]).dropna()
+    for i in range(1, min(31, len(diff))):
+        if diff.iloc[-i] > 0 >= diff.iloc[-i - 1]:
+            ma_cross = f"{i - 1}日前に{mid}日線が{long_}日線を上抜け（ゴールデンクロス）"
+            break
+        if diff.iloc[-i] < 0 <= diff.iloc[-i - 1]:
+            ma_cross = f"{i - 1}日前に{mid}日線が{long_}日線を下抜け（デッドクロス）"
+            break
+
+    def dev(n):
+        m = ma[n].iloc[-1]
+        return pct(last, m) if pd.notna(m) else None
+
+    order = [x for x in (dev(short), dev(mid), dev(long_)) if x is not None]
+    yr = c.iloc[-252:]
+    recent = c.iloc[-60:]
+    vv = v.dropna()
+    returns = c.pct_change().dropna()
+    return {
+        "maWindows": [short, mid, long_],
+        "maDev": {str(n): dev(n) for n in (short, mid, long_)},
+        "maOrder": ("上昇（株価＞短期＞中期＞長期）" if all(ma[a].iloc[-1] > ma[b].iloc[-1] for a, b in ((short, mid), (mid, long_))) and last > ma[short].iloc[-1]
+                    else "下降（株価＜短期＜中期＜長期）" if all(ma[a].iloc[-1] < ma[b].iloc[-1] for a, b in ((short, mid), (mid, long_))) and last < ma[short].iloc[-1]
+                    else "もみ合い") if len(order) == 3 else None,
+        "maCross": ma_cross,
+        "rsi14": rnd(rsi(c).iloc[-1], 1),
+        "macd": rnd(macd.iloc[-1], 3),
+        "macdSignal": rnd(signal.iloc[-1], 3),
+        "macdHist": rnd(hist.iloc[-1], 3),
+        "macdCross": cross,
+        "bbPos": rnd(bb_pos * 100, 0) if bb_pos is not None else None,  # 0=下限(-2σ) 100=上限(+2σ)
+        "high52": rnd(yr.max(), 2),
+        "low52": rnd(yr.min(), 2),
+        "fromHigh52": pct(last, yr.max()),
+        "high60": rnd(recent.max(), 2),
+        "low60": rnd(recent.min(), 2),
+        "volRatio": rnd(vv.iloc[-1] / vv.iloc[-21:-1].mean(), 2) if len(vv) > 21 and vv.iloc[-21:-1].mean() > 0 else None,
+        "volatility": rnd(returns.iloc[-20:].std() * math.sqrt(252) * 100, 1),  # 年率換算（%）
+    }
+
+
+def write_stock_files(market: str, close: pd.DataFrame, volume: pd.DataFrame, data: dict) -> None:
+    """銘柄ページ用に、銘柄ごとの株価（約1年半分）とテクニカル指標を書き出す。"""
+    out = STOCK_DIR / market
+    out.mkdir(parents=True, exist_ok=True)
+    for t, s in data["stocks"].items():
+        if s.get("missing"):
+            continue
+        c = close[t].dropna()
+        v = volume[t].reindex(c.index)
+        tail = c.iloc[-CHART_DAYS:]
+        rec = {
+            "ticker": t,
+            "market": market,
+            "asOf": str(c.index[-1].date()),
+            "dates": [str(d.date()) for d in tail.index],
+            "close": [rnd(x, 2) for x in tail],
+            "volume": [None if pd.isna(x) else int(x) for x in v.reindex(tail.index)],
+            "technicals": technicals(c, v, market),
+        }
+        (out / f"{t}.json").write_text(json.dumps(rec, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 # ---------------------------------------------------------------- 実行
 
 def run(market: str, sample: bool) -> None:
@@ -406,6 +513,7 @@ def run(market: str, sample: bool) -> None:
     data = compute(cfg, close, volume, caps)
     if sample:
         data["sample"] = True
+    write_stock_files(market, close, volume, data)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / f"{market}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

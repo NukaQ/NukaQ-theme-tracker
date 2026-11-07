@@ -11,7 +11,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write   # AI解析の結果をリポジトリに保存するため
   pages: write
   id-token: write
 
@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -34,6 +36,33 @@ jobs:
         run: |
           pip install -r requirements.txt
           python scripts/update_data.py
+
+      # AI解析: 前回送ったバッチの結果を受け取り、次の銘柄を送る。
+      # ANTHROPIC_API_KEY（Settings → Secrets）がなければ何もしない。失敗してもサイトの更新は続ける。
+      # push のときは費用がかからないよう受け取りだけにする。
+      - name: AI解析
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/analyze.py collect
+          if [ "${{ github.event_name }}" != "push" ]; then
+            python scripts/analyze.py submit
+          fi
+
+      - name: AI解析の結果をリポジトリに保存
+        continue-on-error: true
+        run: |
+          git add data/analysis
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "AI解析の結果を更新"
+          git pull -q --rebase origin main
+          git push -q origin HEAD:main
+
+      - name: AI解析の結果をサイトに載せる
+        run: python scripts/analyze.py export
 
       - uses: actions/setup-node@v4
         with:

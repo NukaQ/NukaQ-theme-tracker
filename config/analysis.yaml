@@ -1,0 +1,12 @@
+# AI解析の設定
+model: claude-opus-5-5
+effort: medium        # low / medium / high（高いほど丁寧だが費用が増える）
+
+# 1回の実行で新しく解析する銘柄数の上限（GitHub Actions は1日2回動く）
+max_per_run: 80
+# 前回の解析からこの日数が経ったら解析し直す
+refresh_days: 7
+# 決算発表からこの日数以内で、まだ決算後に解析していない銘柄を最優先にする
+earnings_priority_days: 4
+# 解析に使うニュースの件数
+news_limit: 10
