@@ -46,30 +46,28 @@ cd web && npm install && npm run dev   # http://localhost:3000
 
 `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます。
 
-## AI解析
+## AI解析（管理者が押した銘柄だけ）
 
-`scripts/analyze.py` が、株価・テクニカル指標と Yahoo Finance の財務・アナリスト予想・決算・ニュースを Claude（Anthropic）に渡して、
-銘柄ごとの解析を作ります。結果は `data/analysis/` に保存され、サイトの銘柄ページに表示されます。
+銘柄ページの「AI解析」ボタンを押すと、GitHub Actions がその銘柄の株価・テクニカル指標と Yahoo Finance の
+財務・アナリスト予想・決算・ニュースを集め、**Claude Code（Claude の有料プラン）** で解析して、5分ほどでサイトに反映します。
+API の従量課金はかかりません（有料プランの使用量を消費します）。
 
-**有効にする方法:** リポジトリの Settings → Secrets and variables → Actions で `ANTHROPIC_API_KEY` を登録するだけです。
-キーがなければ解析は行われず、サイトは解析なしで動きます。
+ボタンは、GitHub のトークンを保存したブラウザにだけ表示されます。トークンを持たない人は解析を起動できません。
 
-- 費用を半額にするため Message Batches API を使います。1回の実行で次の銘柄を依頼し、次の実行で結果を受け取ります（結果がサイトに出るまで半日ほど）。
-- 1回の実行で最大 80 銘柄（1日2回）。決算発表の直後の銘柄 → まだ解析していない銘柄 → 7日以上前に解析した銘柄 の順に選びます。
-- push のときは結果の受け取りだけで、新しい依頼はしません。
-- モデル・解析頻度は `config/analysis.yaml` で変えられます。
+### 準備（最初の1回）
 
-費用の目安（1銘柄あたり入力 約4,300トークン・出力 約3,000トークン、Batch 料金で概算）:
+1. **Claude のトークンを登録**: 手元のパソコンで `claude setup-token` を実行（ブラウザで Claude にログイン）し、
+   表示されたトークンをリポジトリの Settings → Secrets and variables → Actions に `CLAUDE_CODE_OAUTH_TOKEN` という名前で登録
+2. **GitHub のトークンを作る**: GitHub の Settings → Developer settings → Fine-grained tokens で、
+   このリポジトリだけ・権限は **Actions: Read and write** だけのトークンを作る
+3. **ブラウザに保存**: サイトの `/admin/` を開き、2 のトークンを貼り付けて保存（メニューには出ない管理者ページ）
 
-| モデル | 1銘柄 | 1か月（約110銘柄/日 × 22営業日） |
-|---|---|---|
-| claude-opus-5-5（初期設定） | 約 $0.04 | 約 $100 |
-| claude-sonnet-5-5 | 約 $0.02 | 約 $50 |
-| claude-haiku-5-5 | 約 $0.001 | 約 $3 |
+### しくみ
 
-実際の費用は Actions のログ（「AI解析」ステップ）に表示されます。
-
-手元で試す: `ANTHROPIC_API_KEY=... python scripts/analyze.py now --market us NVDA`（Batch を使わず即時に解析、通常料金）
+- ボタン → GitHub Actions の「Update data and deploy」を `market`・`ticker` 付きで起動 → `python scripts/analyze.py claude --market us NVDA`
+  → 結果を `data/analysis/` にコミット → サイトを作り直して公開
+- 使うモデルは `config/analysis.yaml` の `claude_code_model`（空ならアカウントの既定）
+- `scripts/analyze.py` には Anthropic API（従量課金）で全銘柄を順番に解析する `submit` / `collect` も残してあります（いまは未使用）
 
 ## 対象銘柄
 

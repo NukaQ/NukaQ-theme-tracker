@@ -5,3 +5,4 @@ pyyaml>=6.0
 lxml>=5.0
 beautifulsoup4>=4.12
 anthropic>=2.6.0
+jsonschema>=4.0

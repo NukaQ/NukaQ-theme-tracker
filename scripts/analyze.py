@@ -1,5 +1,12 @@
 """銘柄ごとのAI解析（テクニカル・ファンダメンタルズ・決算・ニュース・評価・目標株価・売買判断）。
 
+【いま使っている方法】サイトの銘柄ページで管理者が「AI解析」ボタンを押すと、GitHub Actions が
+  python scripts/analyze.py claude --market us NVDA
+を実行し、Claude Code（Claude の有料プラン。CLAUDE_CODE_OAUTH_TOKEN）でその銘柄だけを解析する。
+
+【API を使う方法（いまは使っていない）】以下の collect / submit は Anthropic API（従量課金）で
+全銘柄を順番に解析する仕組み。ANTHROPIC_API_KEY を登録してワークフローに組み込めば使える。
+
 株価データ（scripts/update_data.py の出力）と、Yahoo Finance から集めた財務・決算・ニュースを
 Claude に渡して解析し、data/analysis/{market}/{ticker}.json に保存する。
 
@@ -9,6 +16,7 @@ Claude に渡して解析し、data/analysis/{market}/{ticker}.json に保存す
 を GitHub Actions の毎回の実行で順に行う。
 
 使い方:
+  python scripts/analyze.py claude --market us NVDA       # Claude Code（有料プラン）で解析する
   python scripts/analyze.py collect
   python scripts/analyze.py submit [--limit 80]
   python scripts/analyze.py now --market us NVDA AAPL   # すぐに解析（Batchを使わない・テスト用）
@@ -309,7 +317,7 @@ def out_path(market: str, ticker: str) -> Path:
 
 
 def save_result(item: dict, message) -> bool:
-    """Claude の返答を検証して保存する。使えない返答なら False（次回また選ばれる）。"""
+    """API の返答を検証して保存する。使えない返答なら False（次回また選ばれる）。"""
     if message.stop_reason != "end_turn":
         print(f"  ! {item['ticker']}: stop_reason={message.stop_reason}", file=sys.stderr)
         return False
@@ -319,7 +327,20 @@ def save_result(item: dict, message) -> bool:
     except json.JSONDecodeError:
         print(f"  ! {item['ticker']}: JSONとして読めない返答", file=sys.stderr)
         return False
+    save_ai(item, ai, message.model)
+    return True
+
+
+def safe_url(u):
+    """ニュースのリンクは http(s) のものだけ使う。"""
+    return u if isinstance(u, str) and u.startswith(("https://", "http://")) else None
+
+
+def save_ai(item: dict, ai: dict, model: str) -> None:
+    """検証済みの解析結果に、ニュースのリンクや上昇余地を足して保存する。"""
     news = item["facts"]["news"]
+    for n in news:
+        n["url"] = safe_url(n.get("url"))
     ai["news"]["items"] = [
         {**n, **{k: news[n["index"]][k] for k in ("title", "url", "date", "publisher")}}
         for n in ai["news"]["items"] if 0 <= n["index"] < len(news)
@@ -330,7 +351,7 @@ def save_result(item: dict, message) -> bool:
     rec = {
         "ticker": item["ticker"], "market": item["market"], "name": item["name"],
         "analyzedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "asOf": item["asOf"], "priceAtAnalysis": close, "model": message.model,
+        "asOf": item["asOf"], "priceAtAnalysis": close, "model": model,
         "facts": {k: v for k, v in item["facts"].items() if k != "profile"} | {"profile": {
             k: v for k, v in item["facts"]["profile"].items() if k != "longBusinessSummary"}},
         "ai": ai,
@@ -338,7 +359,6 @@ def save_result(item: dict, message) -> bool:
     p = out_path(item["market"], item["ticker"])
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
-    return True
 
 
 def cost(model: str, inp: int, out: int, batch: bool) -> float:
@@ -482,6 +502,51 @@ def cmd_now(args) -> None:
               f" トークン ≈ ${cost(CFG['model'], u.input_tokens, u.output_tokens, False):.3f}）")
 
 
+def run_claude_code(prompt: str) -> tuple[dict, str]:
+    """Claude Code を1回だけ呼び出し、スキーマどおりの解析結果を受け取る（ツールは使わせない）。"""
+    import subprocess
+
+    cmd = ["claude", "-p", "--output-format", "json", "--json-schema", json.dumps(SCHEMA, ensure_ascii=False),
+           "--system-prompt", SYSTEM, "--tools", ""]
+    if CFG.get("claude_code_model"):
+        cmd += ["--model", CFG["claude_code_model"]]
+    r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=900)
+    if r.returncode != 0:
+        raise RuntimeError(f"Claude Code がエラーで終了しました: {(r.stderr or r.stdout)[-1500:]}")
+    out = json.loads(r.stdout)
+    if out.get("is_error"):
+        raise RuntimeError(f"Claude Code のエラー: {str(out.get('result'))[:1500]}")
+    ai = out.get("structured_output")
+    if ai is None:  # 念のため、本文に書かれたJSONも読めるようにする
+        text = str(out.get("result", "")).strip().removeprefix("```json").removeprefix("```").removesuffix("```")
+        ai = json.loads(text)
+    models = list((out.get("modelUsage") or {}).keys())
+    return ai, f"Claude Code（{models[0] if models else CFG.get('claude_code_model') or '既定のモデル'}）"
+
+
+def cmd_claude(args) -> None:
+    import jsonschema
+
+    md = load_market(args.market)
+    for t in args.tickers:
+        if t not in md["stocks"] or md["stocks"][t].get("missing"):
+            raise SystemExit(f"{t} は{md['name']}の銘柄一覧にありません")
+    for it in prepare([(args.market, t) for t in args.tickers]):
+        last = None
+        for attempt in range(2):  # 形式が崩れたときだけ1回やり直す
+            try:
+                ai, model = run_claude_code(it["prompt"])
+                jsonschema.validate(ai, SCHEMA)
+                save_ai(it, ai, model)
+                print(f"{it['ticker']}: 解析を保存しました（{model}）")
+                break
+            except (json.JSONDecodeError, jsonschema.ValidationError) as e:
+                last = e
+                print(f"  ! {it['ticker']}: 返答の形式が正しくありません（{attempt + 1}回目）: {e}", file=sys.stderr)
+        else:
+            raise SystemExit(f"{it['ticker']} の解析に失敗しました: {last}")
+
+
 def cmd_prompt(args) -> None:
     for it in prepare([(args.market, t) for t in args.tickers]):
         print(it["prompt"])
@@ -521,16 +586,18 @@ def main() -> None:
     e.add_argument("--from", dest="src", help="解析結果のフォルダ（省略時は data/analysis）")
     s = sub.add_parser("submit")
     s.add_argument("--limit", type=int)
-    for name in ("now", "prompt"):
+    for name in ("now", "prompt", "claude"):
         s = sub.add_parser(name)
         s.add_argument("--market", choices=["us", "jp"], required=True)
         s.add_argument("tickers", nargs="+")
     args = ap.parse_args()
 
-    if args.cmd not in ("prompt", "export") and not os.environ.get("ANTHROPIC_API_KEY"):
+    if args.cmd == "claude" and not os.environ.get("CLAUDE_CODE_OAUTH_TOKEN"):
+        raise SystemExit("CLAUDE_CODE_OAUTH_TOKEN が設定されていません（claude setup-token で作ったトークンを登録してください）")
+    if args.cmd not in ("prompt", "export", "claude") and not os.environ.get("ANTHROPIC_API_KEY"):
         print("ANTHROPIC_API_KEY が設定されていないので、AI解析は行いません")
         return
-    {"collect": cmd_collect, "submit": cmd_submit, "now": cmd_now, "prompt": cmd_prompt, "export": cmd_export}[args.cmd](args)
+    {"collect": cmd_collect, "submit": cmd_submit, "now": cmd_now, "prompt": cmd_prompt, "export": cmd_export, "claude": cmd_claude}[args.cmd](args)
 
 
 if __name__ == "__main__":

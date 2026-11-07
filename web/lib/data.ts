@@ -72,7 +72,10 @@ export function useJson<T>(path: string | null) {
       alive = false;
     };
   }, [path]);
-  return state.path === path ? state : { path, data: null, error: null, done: false };
+  if (state.path === path) return state;
+  // 同じファイルの読み直し（?v= 付き）の間は、前の内容を表示したままにする
+  const same = state.path && path && state.path.split("?")[0] === path.split("?")[0];
+  return same ? { ...state, path } : { path, data: null, error: null, done: false };
 }
 
 /** 銘柄一覧の表に出すAI解析の要約（米国株・日本株の両方）。 */

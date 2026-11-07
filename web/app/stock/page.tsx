@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useCallback, useMemo, useState } from "react";
+import AnalyzeButton from "@/components/AnalyzeButton";
 import { Chips, Loading, Pct, Star } from "@/components/ui";
 import { fileName, useJson, useMarketData } from "@/lib/data";
 import { useFavorites } from "@/lib/favorites";
@@ -23,7 +24,10 @@ function StockPage() {
   const ticker = sp.get("t") ?? "";
   const { data: md, error } = useMarketData(market);
   const detail = useJson<StockDetail>(ticker ? `/stock/${market}/${fileName(ticker)}.json` : null);
-  const analysis = useJson<Analysis>(ticker ? `/analysis/${market}/${fileName(ticker)}.json` : null);
+  // 解析が終わったら version を上げて、最新のファイルを読み直す
+  const [version, setVersion] = useState(0);
+  const analysis = useJson<Analysis>(ticker ? `/analysis/${market}/${fileName(ticker)}.json${version ? `?v=${version}` : ""}` : null);
+  const reload = useCallback(() => setVersion(Date.now()), []);
   const { fav, toggle } = useFavorites();
 
   if (!md) return <Loading error={error} />;
@@ -65,6 +69,7 @@ function StockPage() {
         </div>
       )}
 
+      <AnalyzeButton market={market} ticker={ticker} hasAnalysis={!!a} onDone={reload} />
       {a ? <AiSummary a={a} md={md} close={s.close ?? null} /> : analysis.done && <NoAnalysis />}
 
       <section className="panel section">
@@ -169,7 +174,7 @@ const RECO: Record<string, string> = {
 function NoAnalysis() {
   return (
     <section className="panel ai-card muted">
-      この銘柄のAI解析はまだありません。全銘柄を毎日順番に解析しているので、数日以内に表示されます。
+      この銘柄のAI解析はまだありません。AI解析は管理者が依頼した銘柄だけ行っています。
     </section>
   );
 }

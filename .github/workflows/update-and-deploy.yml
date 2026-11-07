@@ -1,12 +1,24 @@
 # 株価を取得してサイトを作り直し、GitHub Pages に公開する。
 # 日本株の大引け後と、米国株の取引終了後に1日2回動く。
 name: Update data and deploy
+# サイトの「AI解析」ボタンから起動されたときは、どの銘柄の解析かを一覧で分かるようにする
+run-name: ${{ inputs.ticker && format('AI解析 {0} {1}', inputs.market, inputs.ticker) || '' }}
 
 on:
   schedule:
     - cron: "10 7 * * 1-5"   # 16:10 JST（日本株の大引け後）
     - cron: "40 21 * * 1-5"  # 06:40 JST（米国株の取引終了後。夏時間は1時間早く閉まる）
-  workflow_dispatch:          # 手動で実行するボタン
+  workflow_dispatch:          # 手動で実行するボタン（サイトの「AI解析」ボタンもこれを使う）
+    inputs:
+      market:
+        description: AI解析する銘柄の市場
+        type: choice
+        options: [us, jp]
+        default: us
+      ticker:
+        description: AI解析する銘柄（空なら株価の更新だけ）
+        type: string
+        default: ""
   push:
     branches: [main]
 
@@ -37,20 +49,20 @@ jobs:
           pip install -r requirements.txt
           python scripts/update_data.py
 
-      # AI解析: 前回送ったバッチの結果を受け取り、次の銘柄を送る。
-      # ANTHROPIC_API_KEY（Settings → Secrets）がなければ何もしない。失敗してもサイトの更新は続ける。
-      # push のときは費用がかからないよう受け取りだけにする。
-      - name: AI解析
-        continue-on-error: true
+      # 管理者がサイトのボタンで指定した1銘柄だけを、Claude Code（有料プラン）で解析する。
+      # 銘柄名は環境変数で渡し、スクリプト側で銘柄一覧にあるかを確かめる。
+      - name: AI解析（Claude Code）
+        if: ${{ inputs.ticker != '' }}
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          MARKET: ${{ inputs.market }}
+          TICKER: ${{ inputs.ticker }}
         run: |
-          python scripts/analyze.py collect
-          if [ "${{ github.event_name }}" != "push" ]; then
-            python scripts/analyze.py submit
-          fi
+          npm install -g @anthropic-ai/claude-code@2.1.319
+          python scripts/analyze.py claude --market "$MARKET" "$TICKER"
 
       - name: AI解析の結果をリポジトリに保存
+        if: ${{ inputs.ticker != '' }}
         continue-on-error: true
         run: |
           git add data/analysis
@@ -77,6 +89,7 @@ jobs:
         working-directory: web
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_GITHUB_REPO: ${{ github.repository }}
         run: |
           npm ci
           npm run build

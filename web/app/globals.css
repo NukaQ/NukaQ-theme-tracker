@@ -246,3 +246,12 @@ table.kv.mini th { width: auto; }
 .pricechart { display: block; width: 100%; height: auto; }
 .disclaimer { margin-top: 4px; line-height: 1.7; }
 @media (max-width: 640px) { .proscons { grid-template-columns: 1fr; } }
+
+/* ---- 管理者用 AI解析ボタン ---- */
+.admin-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 12px; padding: 10px 14px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 50%, var(--border)); border-radius: var(--radius); }
+.ai-button { border: none; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 16px; border-radius: 8px; }
+.ai-button:disabled { opacity: 0.6; cursor: default; }
+.admin-bar a { color: var(--accent); }
+.prose ol { line-height: 1.9; padding-left: 20px; }
+.prose code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; }

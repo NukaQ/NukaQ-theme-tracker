@@ -1,4 +1,10 @@
 # AI解析の設定
+
+# 管理者がボタンを押したときに使う Claude Code（有料プラン）のモデル。
+# 空にするとアカウントの既定のモデル。プランで使えるモデルを "opus" / "sonnet" などで指定できる。
+claude_code_model: ""
+
+# ---- 以下は Anthropic API（従量課金）で全銘柄を順番に解析する場合の設定（いまは使っていない）
 model: claude-opus-5-5
 effort: medium        # low / medium / high（高いほど丁寧だが費用が増える）
 
