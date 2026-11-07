@@ -1,0 +1,286 @@
+{
+ "ticker": "RKLB",
+ "market": "us",
+ "name": "Rocket Lab",
+ "analyzedAt": "2026-11-07T11:57:24+00:00",
+ "asOf": "2026-11-06",
+ "priceAtAnalysis": 53.07,
+ "model": "Claude Code（claude-sonnet-5-5）",
+ "facts": {
+  "fundamentals": {
+   "marketCap": 33933541376,
+   "forwardPE": 923.1171,
+   "priceToBook": 9.0904,
+   "priceToSalesTrailing12Months": 44.1185,
+   "enterpriseToEbitda": -196.557,
+   "returnOnEquity": -7.92,
+   "returnOnAssets": -4.62,
+   "grossMargins": 37.26,
+   "operatingMargins": -24.57,
+   "profitMargins": -21.51,
+   "revenueGrowth": 62.0,
+   "debtToEquity": 3.828,
+   "currentRatio": 5.482,
+   "totalCash": 2302184960,
+   "totalDebt": 133691000,
+   "freeCashflow": -251963632,
+   "dividendYield": 0.0,
+   "payoutRatio": 0.0,
+   "beta": 3.176,
+   "trailingEps": -0.27,
+   "forwardEps": 0.0575
+  },
+  "analyst": {
+   "targetMeanPrice": 102.15,
+   "targetMedianPrice": 102.5,
+   "targetHighPrice": 150.0,
+   "targetLowPrice": 64.0,
+   "recommendationKey": "buy",
+   "recommendationMean": 1.5909,
+   "numberOfAnalystOpinions": 20
+  },
+  "earnings": {
+   "history": [
+    {
+     "date": "2025-11-10",
+     "epsEstimate": -0.06,
+     "epsActual": -0.02,
+     "surprisePct": 66.75
+    },
+    {
+     "date": "2026-02-26",
+     "epsEstimate": -0.05,
+     "epsActual": -0.05,
+     "surprisePct": 10.0
+    },
+    {
+     "date": "2026-05-07",
+     "epsEstimate": -0.04,
+     "epsActual": -0.02,
+     "surprisePct": 58.2
+    },
+    {
+     "date": "2026-08-10",
+     "epsEstimate": -0.08,
+     "epsActual": -0.08,
+     "surprisePct": -4.34
+    }
+   ],
+   "next": {
+    "date": "2026-11-09",
+    "epsEstimate": -0.07,
+    "revenueEstimate": 257177890
+   },
+   "quarterly": [
+    {
+     "period": "2026-06-30",
+     "Total Revenue": 234066000.0,
+     "Operating Income": -57514000.0,
+     "Net Income": -49258000.0,
+     "Diluted EPS": -0.08
+    },
+    {
+     "period": "2026-03-31",
+     "Total Revenue": 200348000.0,
+     "Operating Income": -55969000.0,
+     "Net Income": -45022000.0,
+     "Diluted EPS": -0.07
+    },
+    {
+     "period": "2025-12-31",
+     "Total Revenue": 179652000.0,
+     "Operating Income": -51042000.0,
+     "Net Income": -52922000.0,
+     "Diluted EPS": -0.09
+    },
+    {
+     "period": "2025-09-30",
+     "Total Revenue": 155080000.0,
+     "Operating Income": -58969000.0,
+     "Net Income": -18257000.0,
+     "Diluted EPS": -0.03
+    },
+    {
+     "period": "2025-06-30",
+     "Total Revenue": 144498000.0,
+     "Operating Income": -59639000.0,
+     "Net Income": -66414000.0,
+     "Diluted EPS": -0.13
+    }
+   ]
+  },
+  "news": [
+   {
+    "title": "Cathie Wood-Led Ark Loads Up On GOOG, AMD, NVDA And Biotech Stocks — But Sells CRWV, AVGO, LLY",
+    "summary": "The latest round of trades touched multiple ARK ETFs, spanning artificial intelligence, semiconductors, biotechnology, defense and space-related companies.",
+    "date": "2026-11-07",
+    "publisher": "Stocktwits",
+    "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-invest-buys-goog-amd-nvda-biotech-stocks-sell-crwv-avgo-lly/cNGVV2wR9Ii"
+   },
+   {
+    "title": "3 Space Stocks With Revenue Growth Up To 27%",
+    "summary": "Fresh US jobs data shows employers added 165,000 roles in October and unemployment moved to 4.1%, which points to a still resilient economy even as central bankers talk tough on inflation. That mix of solid activity and rate anxiety has pulled attention toward assets tied to long term infrastructure",
+    "date": "2026-11-07",
+    "publisher": "Simply Wall St.",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/3-space-stocks-revenue-growth-011656763.html"
+   },
+   {
+    "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
+    "summary": "Texas Gov.-elect requests pause on potential land sale to SpaceX. Odds of Tesla merger falls after midterms. FAA plans boost space stocks.",
+    "date": "2026-11-06",
+    "publisher": "Investor's Business Daily",
+    "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo"
+   },
+   {
+    "title": "Musk Says SpaceX Will Hit a Revenue Number That Not One of Its 37 Analysts Believes",
+    "summary": "Elon Musk calls his latest SpaceX forecast a best guess, not a promise, yet it dwarfs every model on the Street. The gap between his vision and the current quarterly numbers shows just how much has to go right.",
+    "date": "2026-11-06",
+    "publisher": "24/7 Wall St.",
+    "url": "https://247wallst.com/investing/2026/11/06/musk-says-spacex-will-hit-a-revenue-number-that-not-one-of-its-37-analysts-believes/"
+   },
+   {
+    "title": "Ahead of Rocket Lab Earnings, Here's What Barchart Data Says Comes Next for RKLB Stock",
+    "summary": "Rocket Lab is set to report its fiscal Q3 earnings on Nov. 9. Options data suggests RKLB shares will rally after the quarterly event.",
+    "date": "2026-11-06",
+    "publisher": "Barchart",
+    "url": "https://www.barchart.com/story/news/8706048/ahead-of-rocket-lab-earnings-here-s-what-barchart-data-says-comes-next-for-rklb-stock"
+   },
+   {
+    "title": "Tesla Rebounds 5% as Musk Ends Cybertruck to Make Room for “Increased Cybercab Production”",
+    "summary": "[IMAGE CREDIT: NASA/Aubrey Gemignani and SUMALI IBNU CHAMID from Alemedia. id via Canva] Key TakeawaysTesla rose 5% today after Elon Musk said it will wind down Cybertruck production in Texas around mid-2027 to build more Cybercabs.",
+    "date": "2026-11-06",
+    "publisher": "TIKR",
+    "url": "https://www.tikr.com/blog/tesla-rebounds-5-as-musk-ends-cybertruck-to-make-room-for-increased-cybercab-production?ref=yahoofinance&tlnk=yf-261106-69vjr5x9"
+   },
+   {
+    "title": "AST SpaceMobile Will Use Firefly in Bold Move to Build Its Starlink Competitor",
+    "summary": "Mobile communications satellite operator AST SpaceMobile drops a space-bombshell on Friday.",
+    "date": "2026-11-06",
+    "publisher": "Barrons.com",
+    "url": "https://www.barrons.com/articles/ast-spacemobile-stock-firely-aerospace-spacex-starlink-c04f3977?siteid=yhoof2&yptr=yahoo"
+   },
+   {
+    "title": "SpaceX Rises 4% as Tech Stocks Rebound From Post-Election Rout; AST SpaceMobile Sinks 8%, Rocket Lab Gains 2%",
+    "summary": "After a brutal midterm selloff, SpaceX is clawing back ground while one space rival keeps sliding. Between Washington scrutiny, a looming Tesla merger vote, and a record-high cost to insure its debt, the bounce faces real tests.",
+    "date": "2026-11-06",
+    "publisher": "24/7 Wall St.",
+    "url": "https://247wallst.com/investing/2026/11/06/spacex-rises-4-as-tech-stocks-rebound-from-post-election-rout-ast-spacemobile-sinks-8-rocket-lab-gains-2/"
+   },
+   {
+    "title": "Dear Rocket Lab Stock Fans, Mark Your Calendars for November 9",
+    "summary": "Rocket Lab is expected to report its Q3 results on Nov. 9, after the market closes.",
+    "date": "2026-11-06",
+    "publisher": "Barchart",
+    "url": "https://www.barchart.com/story/news/8701748/dear-rocket-lab-stock-fans-mark-your-calendars-for-november-9"
+   },
+   {
+    "title": "Rocket Lab Earnings Ahead: What Past Reactions Say About The Stock",
+    "summary": "Rocket Lab (NASDAQ:RKLB) is scheduled to report its earnings on Monday, November 9, 2026. The company has a market value of about $29.0 billion. Over the last twelve months it generated $769 million in revenue and posted an operating loss of $223 million, with a net loss of $165 million.",
+    "date": "2026-11-06",
+    "publisher": "Trefis",
+    "url": "https://www.trefis.com/stock/rklb/articles/623196/rocket-lab-earnings-ahead-what-past-reactions-say-about-the-stock/2026-11-06"
+   }
+  ],
+  "profile": {
+   "longName": "Rocket Lab Corporation",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense"
+  }
+ },
+ "ai": {
+  "headline": "高成長だが極端に割高。決算前の反発局面で慎重姿勢",
+  "technical": {
+   "summary": "3か月で-33.7%、6か月で-49.7%と下落が続き、株価は20・50・200日線すべての下にある。1日で+15.39%と大きく反発したが、下降トレンド内の戻りの可能性が高い。ボラティリティは年率103%と非常に大きい。",
+   "trend": "下降トレンド",
+   "signals": [
+    "移動平均が株価＜短期＜中期＜長期の下降配列。200日線から-32.7%乖離",
+    "MACDは1日前にデッドクロス（下落の勢いが強まるサイン）。RSI43.8で中立圏",
+    "直近60日安値45.99ドルと高値82.08ドルのレンジ内。52週高値から-64.7%"
+   ],
+   "support": 45.99,
+   "resistance": 61.5
+  },
+  "fundamental": {
+   "summary": "売上は前年比+62%と高成長で、現金23億ドルに対し負債1.3億ドルと財務は健全。一方で営業利益率-24.6%、FCFは-2.5億ドルの赤字。時価総額約339億ドル、売上高倍率44倍、PBR9倍、予想PER約923倍と、将来の成長を極めて強く織り込んでいる。",
+   "valuation": "割高",
+   "strengths": [
+    "売上高が前年比+62%で、四半期売上も1.44億→2.34億ドルへ拡大",
+    "現金23億ドル、流動比率5.5倍で資金繰りに余裕",
+    "打ち上げと宇宙システムの両事業を持つ垂直統合型"
+   ],
+   "risks": [
+    "売上高倍率44倍など評価が極端に高く、期待が外れると下落が大きい",
+    "営業赤字とFCFマイナスが続く",
+    "β3.7、変動率103%で相場全体の悪化に弱い"
+   ]
+  },
+  "earnings": {
+   "summary": "直近2026年6月期は売上2.34億ドル（前年同期比約+62%）で増収が続いたが、EPSは-0.08ドルで予想並み（サプライズ-4.3%）。過去4回のうち3回は上振れだが、直近は小幅に下振れ。赤字は継続している。",
+   "lastResult": "おおむね予想通り",
+   "nextFocus": "11月9日発表予定（予想EPS -0.07ドル、売上約2.57億ドル）。売上の達成度、粗利率と赤字幅の縮小、受注残、中型ロケット開発の進捗に注目。"
+  },
+  "news": {
+   "summary": "決算前の期待と宇宙株全体の反発が目立つ。SpaceXやAST SpaceMobileなど他社の話題が多く、直接材料は決算関連が中心。オプション市場は決算後の上昇を示唆するが、割高感から変動は大きい。",
+   "items": [
+    {
+     "index": 4,
+     "titleJa": "ロケットラボ決算前、オプションは決算後の上昇を示唆",
+     "sentiment": "好材料",
+     "title": "Ahead of Rocket Lab Earnings, Here's What Barchart Data Says Comes Next for RKLB Stock",
+     "url": "https://www.barchart.com/story/news/8706048/ahead-of-rocket-lab-earnings-here-s-what-barchart-data-says-comes-next-for-rklb-stock",
+     "date": "2026-11-06",
+     "publisher": "Barchart"
+    },
+    {
+     "index": 8,
+     "titleJa": "11月9日の引け後に第3四半期決算を発表予定",
+     "sentiment": "中立",
+     "title": "Dear Rocket Lab Stock Fans, Mark Your Calendars for November 9",
+     "url": "https://www.barchart.com/story/news/8701748/dear-rocket-lab-stock-fans-mark-your-calendars-for-november-9",
+     "date": "2026-11-06",
+     "publisher": "Barchart"
+    },
+    {
+     "index": 9,
+     "titleJa": "決算前、過去の株価反応を分析（直近売上7.69億ドル、営業赤字2.23億ドル）",
+     "sentiment": "中立",
+     "title": "Rocket Lab Earnings Ahead: What Past Reactions Say About The Stock",
+     "url": "https://www.trefis.com/stock/rklb/articles/623196/rocket-lab-earnings-ahead-what-past-reactions-say-about-the-stock/2026-11-06",
+     "date": "2026-11-06",
+     "publisher": "Trefis"
+    },
+    {
+     "index": 7,
+     "titleJa": "選挙後の急落から宇宙株が反発、ロケットラボは+2%",
+     "sentiment": "好材料",
+     "title": "SpaceX Rises 4% as Tech Stocks Rebound From Post-Election Rout; AST SpaceMobile Sinks 8%, Rocket Lab Gains 2%",
+     "url": "https://247wallst.com/investing/2026/11/06/spacex-rises-4-as-tech-stocks-rebound-from-post-election-rout-ast-spacemobile-sinks-8-rocket-lab-gains-2/",
+     "date": "2026-11-06",
+     "publisher": "24/7 Wall St."
+    },
+    {
+     "index": 2,
+     "titleJa": "FAAの計画などで宇宙株が反発",
+     "sentiment": "好材料",
+     "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
+     "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo",
+     "date": "2026-11-06",
+     "publisher": "Investor's Business Daily"
+    }
+   ]
+  },
+  "rating": {
+   "stars": 2,
+   "reason": "売上成長と財務の健全性は魅力だが、評価が極端に高く、下降トレンドで赤字も続くため慎重に見る。"
+  },
+  "targetPrice": {
+   "price": 60,
+   "basis": "アナリスト平均102ドルは参考にとどめた。売上が今後1年で約30〜40%伸びても売上高倍率30倍前後が上限と見て、現在よりやや高い水準とした。",
+   "upsidePct": 13.1
+  },
+  "verdict": {
+   "action": "やや売り",
+   "reason": "下降トレンドが続き、決算前に急反発した直後で、割高感も強い。決算で売上・受注残が大きく上振れし、宇宙株全体が上昇に転じれば判断は外れる。決算での大きな値動きに注意。"
+  }
+ }
+}
