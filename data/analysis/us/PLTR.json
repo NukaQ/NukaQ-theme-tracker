@@ -1,0 +1,289 @@
+{
+ "ticker": "PLTR",
+ "market": "us",
+ "name": "Palantir Technologies",
+ "analyzedAt": "2026-11-07T12:48:18+00:00",
+ "asOf": "2026-11-06",
+ "priceAtAnalysis": 160.38,
+ "model": "Claude Code（claude-sonnet-5-5）",
+ "facts": {
+  "fundamentals": {
+   "marketCap": 386435252224,
+   "trailingPE": 112.9437,
+   "forwardPE": 63.2608,
+   "priceToBook": 34.4089,
+   "priceToSalesTrailing12Months": 53.0216,
+   "enterpriseToEbitda": 112.126,
+   "trailingPegRatio": 1.3035,
+   "returnOnEquity": 40.91,
+   "returnOnAssets": 19.31,
+   "grossMargins": 84.74,
+   "operatingMargins": 46.89,
+   "profitMargins": 50.34,
+   "revenueGrowth": 95.9,
+   "earningsGrowth": 144.4,
+   "debtToEquity": 1.986,
+   "currentRatio": 7.102,
+   "totalCash": 10561530880,
+   "totalDebt": 225267008,
+   "freeCashflow": 2652487680,
+   "dividendYield": 0.0,
+   "payoutRatio": 0.0,
+   "beta": 1.61,
+   "trailingEps": 1.42,
+   "forwardEps": 2.5352
+  },
+  "analyst": {
+   "targetMeanPrice": 222.2536,
+   "targetMedianPrice": 235.0,
+   "targetHighPrice": 273.0,
+   "targetLowPrice": 80.0,
+   "recommendationKey": "buy",
+   "recommendationMean": 1.8485,
+   "numberOfAnalystOpinions": 28
+  },
+  "earnings": {
+   "history": [
+    {
+     "date": "2026-02-02",
+     "epsEstimate": 0.23,
+     "epsActual": 0.25,
+     "surprisePct": 8.6
+    },
+    {
+     "date": "2026-05-04",
+     "epsEstimate": 0.28,
+     "epsActual": 0.33,
+     "surprisePct": 18.08
+    },
+    {
+     "date": "2026-08-03",
+     "epsEstimate": 0.35,
+     "epsActual": 0.41,
+     "surprisePct": 18.51
+    },
+    {
+     "date": "2026-11-02",
+     "epsEstimate": 0.41,
+     "epsActual": 0.44,
+     "surprisePct": 8.41
+    }
+   ],
+   "next": {
+    "date": "2027-02-01",
+    "epsEstimate": 0.52,
+    "revenueEstimate": 2670136910
+   },
+   "quarterly": [
+    {
+     "period": "2026-09-30",
+     "Total Revenue": 2313411000.0,
+     "Operating Income": 1084845000.0,
+     "Net Income": 1128012000.0,
+     "Diluted EPS": 0.44
+    },
+    {
+     "period": "2026-06-30",
+     "Total Revenue": 1935464000.0,
+     "Operating Income": 912004000.0,
+     "Net Income": 1061890000.0,
+     "Diluted EPS": 0.41
+    },
+    {
+     "period": "2026-03-31",
+     "Total Revenue": 1632583000.0,
+     "Operating Income": 753998000.0,
+     "Net Income": 870527000.0,
+     "Diluted EPS": 0.34
+    },
+    {
+     "period": "2025-12-31",
+     "Total Revenue": 1406802000.0,
+     "Operating Income": 575394000.0,
+     "Net Income": 608676000.0,
+     "Diluted EPS": 0.24
+    },
+    {
+     "period": "2025-09-30",
+     "Total Revenue": 1181092000.0,
+     "Operating Income": 393256000.0,
+     "Net Income": 475599000.0,
+     "Diluted EPS": 0.18
+    }
+   ]
+  },
+  "news": [
+   {
+    "title": "Palantir Stock Investors Just Got Great News From a Wall Street Analyst (Hint: The Stock Could Soar)",
+    "summary": "JPMorgan Chase analyst Brian Essex believes Palantir is deeply undervalued.",
+    "date": "2026-11-07",
+    "publisher": "Motley Fool",
+    "url": "https://www.fool.com/investing/2026/11/07/palantir-stock-investors-great-news-wall-street-stock-soar/"
+   },
+   {
+    "title": "How Much Should This Move Change Your View Of Snowflake Stock?",
+    "summary": "For questions about this article or underlying research, email help@trefis.com.",
+    "date": "2026-11-07",
+    "publisher": "Trefis",
+    "url": "https://www.trefis.com/stock/snow/articles/623620/how-much-should-this-move-change-your-view-of-snowflake-stock/2026-11-07"
+   },
+   {
+    "title": "Charlie Bilello Says “Some Sanity Has Returned to the Market.” What That Means for Your Portfolio",
+    "summary": "The market's wildest bets just lost billions in paper gains, and one data watcher calls the wreckage healthy. Before you cheer or panic, see which three moves could protect your retirement accounts and what to watch before year-end.",
+    "date": "2026-11-06",
+    "publisher": "24/7 Wall St.",
+    "url": "https://247wallst.com/investing/2026/11/06/charlie-bilello-says-some-sanity-has-returned-to-the-market-what-that-means-for-your-portfolio/"
+   },
+   {
+    "title": "How a Slowdown in Commercial Bookings Is Rocking Palantir Stock",
+    "summary": "Palantir’s blowout Q3 results and raised 2026 outlook failed to reassure investors as a sharp slowdown in U.S. commercial bookings fuels concerns.",
+    "date": "2026-11-06",
+    "publisher": "Barchart",
+    "url": "https://www.barchart.com/story/news/8709488/how-a-slowdown-in-commercial-bookings-is-rocking-palantir-stock"
+   },
+   {
+    "title": "Tech Stock Sell-Off 'Golden Buying Opportunity,' Says Dan Ives",
+    "summary": "The tech stock sell-off presents a \"golden buying opportunity\" for investors to buy marquee stocks like Apple, Microsoft and Nvidia, one analyst says.",
+    "date": "2026-11-06",
+    "publisher": "Investor's Business Daily",
+    "url": "https://www.investors.com/news/technology/tech-stocks-sell-off-golden-buying-opportunity-dan-ives/?src=A00220&yptr=yahoo"
+   },
+   {
+    "title": "10 Latest Jim Cramer Stock Picks on Twitter and Mad Money",
+    "summary": "Markets are trembling amid the latest AI stock sell-off, which has sent shares of major AI players deep into the red. But CNBC’s Jim Cramer believes the downturn is not another dot-com crash. Cramer warned that AI stocks could fall further, particularly semiconductor companies whose shares surged du",
+    "date": "2026-11-06",
+    "publisher": "Insider Monkey",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/10-latest-jim-cramer-stock-210714698.html"
+   },
+   {
+    "title": "Palantir Stock Slips Despite Beating Revenue and Earnings Estimates in Q3. What Investors Should Watch Next.",
+    "summary": "Palantir beat Q3 estimates and raised its 2026 outlook while U.S. commercial sales topped government sales for the first time.",
+    "date": "2026-11-06",
+    "publisher": "Barchart",
+    "url": "https://www.barchart.com/story/news/8707932/palantir-stock-slips-despite-beating-revenue-and-earnings-estimates-in-q3-what-investors-should-watch-next"
+   },
+   {
+    "title": "Palantir Technologies Inc. (PLTR) Delivered Explosive AI Growth: Is the Stock Still Worth Watching?",
+    "summary": "Liontrust Investment Partners recently released its “GF Global Innovation Fund” Q3 2026 investor letter. A copy of the letter can be downloaded here. The Fund returned -3.0% in the third quarter of 2026, underperforming the MSCI AC World Index, which gained 1.6%. However, the Fund remained ahead yea",
+    "date": "2026-11-06",
+    "publisher": "Insider Monkey",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-inc-pltr-delivered-173014252.html"
+   },
+   {
+    "title": "The Biggest Takeaway From Palantir Technologies’ Latest Quarterly Report Is a Potential Warning Sign Investors Shouldn’t Miss",
+    "summary": "Palantir reported incredible growth last quarter, but the slowdown in contract value growth seems like a red flag.",
+    "date": "2026-11-06",
+    "publisher": "Motley Fool",
+    "url": "https://www.fool.com/investing/2026/11/06/the-biggest-takeaway-from-palantir-technologies-latest-quarterly-report-is-a-potential-warning-sign-investors-shouldn-t-miss/"
+   },
+   {
+    "title": "Stock Market Suffers Ugly Losses In Election Week; Apple, Palantir Led Key Earnings: Weekly Review",
+    "summary": "The stock market suffered ugly losses this past week, especially in Thursday's day two election reaction. Apple, Palantir led big earnings.",
+    "date": "2026-11-06",
+    "publisher": "Investor's Business Daily",
+    "url": "https://www.investors.com/news/stock-market-suffers-ugly-losses-in-election-week-apple-palantir-led-key-earnings-weekly-review/?src=A00220&yptr=yahoo"
+   }
+  ],
+  "profile": {
+   "longName": "Palantir Technologies Inc.",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure"
+  }
+ },
+ "ai": {
+  "headline": "好決算でも急落、高成長だが高バリュエーションが重荷",
+  "technical": {
+   "summary": "直近1か月で約19%下落し、終値160.38ドルはボリンジャーバンド下限(-2σ)に位置し、RSIは31.2で売られすぎ圏に近い。20日・50日移動平均を大きく下回る一方、200日線は4%上回り、長期線で踏みとどまっている。",
+   "trend": "下降トレンド",
+   "signals": [
+    "RSI31.2と売られすぎ圏、bbPos0でバンド下限に張り付き",
+    "MACDがシグナルを大きく下回り(ヒストグラム-5.0)、下落の勢いが強い",
+    "200日線(乖離+4.5%)が支持線になるかが焦点。年率変動率57.5%と値動きが大きい"
+   ],
+   "support": 155,
+   "resistance": 185
+  },
+  "fundamental": {
+   "summary": "売上成長率95.9%、営業利益率46.9%、純利益率50.3%と収益性・成長性は極めて高い。現金約106億ドルで負債はほぼなく、財務は健全。一方で予想PER63倍、実績PER113倍、PSR53倍と、成長を相当織り込んだ水準にある。",
+   "valuation": "割高",
+   "strengths": [
+    "売上・利益とも急拡大(売上成長96%、営業利益率47%)",
+    "実質無借金で現金が潤沢、フリーCFは約26.5億ドル",
+    "ROE40.9%と資本効率が高い"
+   ],
+   "risks": [
+    "PSR53倍・予想PER63倍と高く、成長鈍化の兆しで大きく売られやすい",
+    "米国商業部門の受注(ブッキング)の伸び鈍化への懸念",
+    "β約2で、AI・ハイテク株全体の調整の影響を受けやすい"
+   ]
+  },
+  "earnings": {
+   "summary": "2026年11月2日発表の7-9月期はEPS0.44ドルで予想0.41ドルを8.4%上回った。売上は23.1億ドルで前年同期(11.8億ドル)のほぼ2倍、営業利益は10.8億ドルと約2.8倍。通期見通しも引き上げたが、株価は下落した。直近4四半期連続で予想を上回っている。",
+   "lastResult": "上振れ",
+   "nextFocus": "次回は2027年2月1日予定(EPS予想0.52ドル、売上予想約26.7億ドル)。米国商業部門の受注と契約価値の伸びが再加速するか、政府部門との比率、売上成長率を維持できるかに注目。"
+  },
+  "news": {
+   "summary": "決算自体は好調で、JPモルガンの割安評価もある。一方、米国商業部門の受注鈍化への懸念と、AI株全体の売りが株価を押し下げている。",
+   "items": [
+    {
+     "index": 3,
+     "titleJa": "商業部門の受注減速がパランティア株を揺らす",
+     "sentiment": "悪材料",
+     "title": "How a Slowdown in Commercial Bookings Is Rocking Palantir Stock",
+     "url": "https://www.barchart.com/story/news/8709488/how-a-slowdown-in-commercial-bookings-is-rocking-palantir-stock",
+     "date": "2026-11-06",
+     "publisher": "Barchart"
+    },
+    {
+     "index": 8,
+     "titleJa": "最新決算の最大の注意点は契約価値の伸びの鈍化という警告サイン",
+     "sentiment": "悪材料",
+     "title": "The Biggest Takeaway From Palantir Technologies’ Latest Quarterly Report Is a Potential Warning Sign Investors Shouldn’t Miss",
+     "url": "https://www.fool.com/investing/2026/11/06/the-biggest-takeaway-from-palantir-technologies-latest-quarterly-report-is-a-potential-warning-sign-investors-shouldn-t-miss/",
+     "date": "2026-11-06",
+     "publisher": "Motley Fool"
+    },
+    {
+     "index": 6,
+     "titleJa": "売上・利益が予想超えで通期見通し引き上げも株価は下落。米国商業が初めて政府を上回る",
+     "sentiment": "中立",
+     "title": "Palantir Stock Slips Despite Beating Revenue and Earnings Estimates in Q3. What Investors Should Watch Next.",
+     "url": "https://www.barchart.com/story/news/8707932/palantir-stock-slips-despite-beating-revenue-and-earnings-estimates-in-q3-what-investors-should-watch-next",
+     "date": "2026-11-06",
+     "publisher": "Barchart"
+    },
+    {
+     "index": 0,
+     "titleJa": "JPモルガンのアナリストが同社を大幅な割安と評価",
+     "sentiment": "好材料",
+     "title": "Palantir Stock Investors Just Got Great News From a Wall Street Analyst (Hint: The Stock Could Soar)",
+     "url": "https://www.fool.com/investing/2026/11/07/palantir-stock-investors-great-news-wall-street-stock-soar/",
+     "date": "2026-11-07",
+     "publisher": "Motley Fool"
+    },
+    {
+     "index": 9,
+     "titleJa": "選挙週に株式市場が大幅安、アップルとパランティアの決算が注目",
+     "sentiment": "悪材料",
+     "title": "Stock Market Suffers Ugly Losses In Election Week; Apple, Palantir Led Key Earnings: Weekly Review",
+     "url": "https://www.investors.com/news/stock-market-suffers-ugly-losses-in-election-week-apple-palantir-led-key-earnings-weekly-review/?src=A00220&yptr=yahoo",
+     "date": "2026-11-06",
+     "publisher": "Investor's Business Daily"
+    }
+   ]
+  },
+  "rating": {
+   "stars": 3,
+   "reason": "成長性・収益性・財務は最高水準だが、バリュエーションが高く、下降トレンドと受注鈍化懸念が重なる。売られすぎの反発余地はあるものの、評価は普通とした。"
+  },
+  "targetPrice": {
+   "price": 195,
+   "basis": "来期予想EPS2.54ドルに対し、成長鈍化リスクを考慮して約77倍のPERを適用。アナリスト平均目標222ドルよりは保守的に見積もった。",
+   "upsidePct": 21.6
+  },
+  "verdict": {
+   "action": "中立",
+   "reason": "売られすぎで短期反発は見込めるが、下降トレンドが続き、高バリュエーションのため下値余地も残る。200日線(約153ドル)を割り込めば下落が加速する恐れがある。逆に商業部門の受注が持ち直し、AI株全体が反発すれば上振れもあり得る。"
+  }
+ }
+}
