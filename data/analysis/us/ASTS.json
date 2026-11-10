@@ -2,30 +2,29 @@
  "ticker": "ASTS",
  "market": "us",
  "name": "AST SpaceMobile",
- "analyzedAt": "2026-11-07T12:56:23+00:00",
- "asOf": "2026-11-06",
- "priceAtAnalysis": 32.33,
+ "analyzedAt": "2026-11-10T10:48:36+00:00",
+ "asOf": "2026-11-09",
+ "priceAtAnalysis": 36.89,
  "model": "Claude Code（claude-sonnet-5-5）",
  "facts": {
   "fundamentals": {
-   "marketCap": 12581785600,
-   "forwardPE": -22.2622,
-   "priceToBook": 5.1163,
-   "priceToSalesTrailing12Months": 109.1231,
-   "enterpriseToEbitda": -26.829,
-   "returnOnEquity": -45.62,
-   "returnOnAssets": -7.64,
-   "grossMargins": 38.91,
-   "operatingMargins": -544.63,
+   "marketCap": 14356388864,
+   "forwardPE": -25.4021,
+   "priceToBook": 5.8379,
+   "priceToSalesTrailing12Months": 100.4786,
+   "enterpriseToEbitda": -26.6,
+   "returnOnEquity": -43.23,
+   "returnOnAssets": -7.54,
+   "grossMargins": 37.05,
+   "operatingMargins": -398.52,
    "profitMargins": 0.0,
-   "revenueGrowth": 2626.6,
-   "debtToEquity": 124.865,
-   "currentRatio": 13.053,
-   "totalCash": 2288252928,
-   "totalDebt": 2993731072,
-   "freeCashflow": -1799572992,
+   "revenueGrowth": 187.1,
+   "debtToEquity": 190.454,
+   "currentRatio": 13.651,
+   "totalCash": 2798910976,
+   "totalDebt": 4118731008,
+   "freeCashflow": -2026723584,
    "dividendYield": 0.0,
-   "beta": 2.847,
    "trailingEps": -2.13,
    "forwardEps": -1.4522
   },
@@ -40,12 +39,6 @@
   },
   "earnings": {
    "history": [
-    {
-     "date": "2025-11-10",
-     "epsEstimate": -0.26,
-     "epsActual": -0.45,
-     "surprisePct": -74.39
-    },
     {
      "date": "2026-03-02",
      "epsEstimate": -0.2,
@@ -63,12 +56,18 @@
      "epsEstimate": -0.33,
      "epsActual": -0.77,
      "surprisePct": -131.96
+    },
+    {
+     "date": "2026-11-09",
+     "epsEstimate": -0.45,
+     "epsActual": -0.44,
+     "surprisePct": 1.77
     }
    ],
    "next": {
-    "date": "2026-11-09",
-    "epsEstimate": -0.45,
-    "revenueEstimate": 46003120
+    "date": "2027-03-01",
+    "epsEstimate": -0.44,
+    "revenueEstimate": 71772380
    },
    "quarterly": [
     {
@@ -110,74 +109,74 @@
   },
   "news": [
    {
-    "title": "Why Did Firefly Aerospace (FLY) Move Today?",
-    "summary": "Firefly Aerospace stock moves after AST SpaceMobile engine deal Firefly Aerospace (FLY) stock is in focus after the company signed a more than US$1.3 billion, three-year engine supply and licensing agreement with AST SpaceMobile for a planned heavy-lift rocket program. Firefly Aerospace has been vol",
-    "date": "2026-11-07",
+    "title": "AST SpaceMobile (ASTS) Secures Up To $1 Billion For Japan Satellite Venture",
+    "summary": "AST SpaceMobile (NasdaqGS:ASTS) and Rakuten agreed to form a joint venture to build a direct to device satellite network in Japan. The venture plans a dedicated mid band satellite constellation aimed at serving commercial smartphones and emergency connectivity nationwide. The project is supported by",
+    "date": "2026-11-10",
     "publisher": "Simply Wall St.",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/why-did-firefly-aerospace-fly-111303673.html"
+    "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-asts-secures-1-090953107.html"
    },
    {
-    "title": "AST SpaceMobile (ASTS) Bets On Reusable Blacklift Rocket To Control 2028 Launches",
-    "summary": "AST SpaceMobile (NasdaqGS:ASTS) plans to deploy its BlueBird satellite constellation using a new reusable Blacklift rocket starting in 2028. The Blacklift launch system is being developed with Firefly Aerospace under a dedicated technology and engine agreement. The company aims for more independent ",
-    "date": "2026-11-07",
-    "publisher": "Simply Wall St.",
-    "url": "https://finance.yahoo.com/technology/articles/ast-spacemobile-asts-bets-reusable-081231242.html"
-   },
-   {
-    "title": "Here’s Why Firefly Aerospace (FLY) Surged 36.8%",
-    "summary": "Firefly Aerospace Inc. (NASDAQ:FLY) is one of the 10 Stocks With Effortless 18-42% Gains. Firefly Aerospace grew its share price by 36.80 percent on Friday to end at $20.76 apiece, after bagging a $1.3 billion deal with AST SpaceMobile for the delivery of 36 rocket engines, among others. In a statem",
-    "date": "2026-11-07",
-    "publisher": "Insider Monkey",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/firefly-aerospace-fly-bags-1-015916425.html"
-   },
-   {
-    "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
-    "summary": "Texas Gov.-elect requests pause on potential land sale to SpaceX. Odds of Tesla merger falls after midterms. FAA plans boost space stocks.",
-    "date": "2026-11-06",
-    "publisher": "Investor's Business Daily",
-    "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo"
-   },
-   {
-    "title": "Musk Says SpaceX Will Hit a Revenue Number That Not One of Its 37 Analysts Believes",
-    "summary": "Elon Musk calls his latest SpaceX forecast a best guess, not a promise, yet it dwarfs every model on the Street. The gap between his vision and the current quarterly numbers shows just how much has to go right.",
-    "date": "2026-11-06",
-    "publisher": "24/7 Wall St.",
-    "url": "https://247wallst.com/investing/2026/11/06/musk-says-spacex-will-hit-a-revenue-number-that-not-one-of-its-37-analysts-believes/"
-   },
-   {
-    "title": "Firefly Aerospace Skyrockets 30% on $1.3 Billion Deal With AST SpaceMobile",
-    "summary": "Firefly stock rallies on a $1.3 billion deal with AST SpaceMobile. But it may not be too late to invest in FLY shares yet.",
-    "date": "2026-11-06",
-    "publisher": "Barchart",
-    "url": "https://www.barchart.com/story/news/8707411/firefly-aerospace-skyrockets-30-on-1-3-billion-deal-with-ast-spacemobile"
-   },
-   {
-    "title": "AST SpaceMobile Soars 7% on $1.3 Billion Rocket Plan Promising “Unconstrained Access to Orbit”",
-    "summary": "Key TakeawaysAST SpaceMobile rose 7% on plans for its own reusable rocket, with Firefly Aerospace engines under a deal worth more than $1. 3 billion.",
-    "date": "2026-11-06",
-    "publisher": "TIKR",
-    "url": "https://www.tikr.com/blog/ast-spacemobile-soars-7-on-1-3-billion-rocket-plan-promising-unconstrained-access-to-orbit?ref=yahoofinance&tlnk=yf-261106-mhjpg9p6"
-   },
-   {
-    "title": "Ahead of AST SpaceMobile Earnings, Here's What Barchart Data Says Comes Next for ASTS Stock",
-    "summary": "AST SpaceMobile is scheduled to report Q3 earnings on Nov. 9. Here’s how the data suggests you should play ASTS shares at current levels.",
-    "date": "2026-11-06",
-    "publisher": "Barchart",
-    "url": "https://www.barchart.com/story/news/8706234/ahead-of-ast-spacemobile-earnings-here-s-what-barchart-data-says-comes-next-for-asts-stock"
-   },
-   {
-    "title": "Why Firefly Aerospace Stock Went to the Moon Today",
-    "summary": "Firefly just agreed to sell AST SpaceMobile $1.3 billion worth of rocket engines.",
-    "date": "2026-11-06",
+    "title": "Why Firefly Stock Soared Today",
+    "summary": "The space economy is heating up.",
+    "date": "2026-11-10",
     "publisher": "Motley Fool",
-    "url": "https://www.fool.com/investing/2026/11/06/why-firefly-aerospace-stock-went-to-the-moon-today/"
+    "url": "https://www.fool.com/investing/2026/11/09/why-firefly-stock-soared-today/"
    },
    {
-    "title": "AST SpaceMobile Fell 26% in a Week. The November 9 Report Has to Answer the Dilution Question",
-    "summary": "Key TakeawaysAST SpaceMobile is down 26% in the past week, a slide that began with reports that SpaceX is in talks to buy Boost Mobile, ahead of AST’s third-quarter report on Monday, Nov. 9.",
-    "date": "2026-11-06",
+    "title": "ASTS Stock Retreats On Q3 Sales Miss – But AST SpaceMobile’s $1B Revenue Opportunity, AI Partnerships Keep Growth In Focus",
+    "summary": "AST maintained its 2026 revenue forecast of $150 million to $200 million, with potential upside from recent contracts.",
+    "date": "2026-11-10",
+    "publisher": "Stocktwits",
+    "url": "https://stocktwits.com/news-articles/markets/equity/asts-q3-sales-miss-1b-revenue-opportunity-ai-partnerships-growth-focus/cNGuGazR97f"
+   },
+   {
+    "title": "What AST SpaceMobile (ASTS) Said on Its Q3 Earnings Call",
+    "summary": "AST SpaceMobile (NASDAQ:ASTS) reported $42.3 million in third-quarter revenue and reiterated its full-year 2026 revenue forecast, as it prepares to activate intermittent satellite service in the United States and other key markets before year-end. The company also outlined plans to build its own re",
+    "date": "2026-11-10",
+    "publisher": "MarketBeat",
+    "url": "https://www.marketbeat.com/instant-alerts/transcript-what-ast-spacemobile-asts-said-on-its-q3-earnings-call-2026-11-09/?utm_source=yahoofinance&utm_medium=yahoofinance"
+   },
+   {
+    "title": "Why AST SpaceMobile Stock Jumped 14.1% Today",
+    "summary": "AST SpaceMobile stock jumped on a Japan joint venture with Rakuten, but the company's quarterly revenue missed Wall Street's expectations even as it held its full-year forecast.",
+    "date": "2026-11-09",
+    "publisher": "Motley Fool",
+    "url": "https://www.fool.com/investing/2026/11/09/why-ast-spacemobile-stock-jumped-14-1-today/"
+   },
+   {
+    "title": "AST SpaceMobile misses estimates but shares edge higher",
+    "summary": "Investing.com -- Ast Spacemobile Inc (NASDAQ:ASTS) reported third quarter results that fell short of analyst expectations, with adjusted EPS of -$0.44 compared to the consensus estimate of -$0.40. Revenue reached $42.3 million, missing the analyst estimate of $47.9 million. The company’s revenue was",
+    "date": "2026-11-09",
+    "publisher": "Investing.com",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-misses-estimates-shares-230148893.html"
+   },
+   {
+    "title": "AST SpaceMobile, Inc. (ASTS) Reports Q3 Loss, Misses Revenue Estimates",
+    "summary": "AST SpaceMobile (ASTS) delivered earnings and revenue surprises of -7.32% and -4.83%, respectively, for the quarter ended September 2026. Do the numbers hold clues to what lies ahead for the stock?",
+    "date": "2026-11-09",
+    "publisher": "Zacks",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-inc-asts-reports-223503456.html"
+   },
+   {
+    "title": "AST SpaceMobile Sales Were Weak. That Doesn’t Matter.",
+    "summary": "AST isn’t expected to generate significant sales and earnings until its communications satellite constellation is up and running.",
+    "date": "2026-11-09",
+    "publisher": "Barrons.com",
+    "url": "https://www.barrons.com/articles/ast-spacemobile-stock-earnings-space-stocks-8580e807?siteid=yhoof2&yptr=yahoo"
+   },
+   {
+    "title": "AST SpaceMobile Is Down 55% in 2026: Is It Time to Sell, or Load Up?",
+    "summary": "Key TakeawaysAST SpaceMobile is down 55% in 2026 and hit a new 52-week low on Nov. 6, after a $1.",
+    "date": "2026-11-09",
     "publisher": "TIKR",
-    "url": "https://www.tikr.com/blog/ast-spacemobile-fell-26-in-a-week-the-november-9-report-has-to-answer-the-dilution-question?ref=yahoofinance&tlnk=yf-261106-q7xp296v"
+    "url": "https://www.tikr.com/blog/ast-spacemobile-is-down-55-in-2026-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261109-jp3hg72f"
+   },
+   {
+    "title": "AST SpaceMobile Stocks Surge 17.29% on Rakuten Japan Satellite Venture",
+    "summary": "Rakuten AST will build a direct-to-smartphone satellite network in Japan, with about $1 billion in expected government support.",
+    "date": "2026-11-09",
+    "publisher": "GuruFocus.com",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-stocks-surge-17-182758155.html"
    }
   ],
   "profile": {
@@ -187,99 +186,99 @@
   }
  },
  "ai": {
-  "headline": "急落後の売られ過ぎ圏、決算と増資懸念が焦点の高リスク株",
+  "headline": "楽天提携で反発も、巨額赤字と下降トレンドが重い",
   "technical": {
-   "summary": "株価は20・50・200日の全移動平均を下回り、1か月で約43%下落した明確な下降トレンドです。RSI(売られ過ぎ・買われ過ぎの指標)は30.4で売られ過ぎ圏、ボリンジャーバンド位置も7と下限付近ですが、MACDはデッドクロス直後で下落の勢いが残ります。年率変動率は約100%と大きく、決算での値動きも激しくなりそうです。",
+   "summary": "株価は200日線を約51%下回り、52週高値から72%下落した明確な下降トレンド。直近は楽天との提携材料で1日+14.1%反発したが、20日線（乖離-6.97%）には届いていない。年率変動率115%と値動きが非常に荒い。",
    "trend": "下降トレンド",
    "signals": [
-    "移動平均が株価＜20日＜50日＜200日の下降配列、200日線から-57%乖離",
-    "RSI30.4・BB位置7で短期的な売られ過ぎ、反発が出やすい",
-    "MACDが2日前にデッドクロス、52週安値30.2ドルに接近"
+    "移動平均が株価＜20日＜50日＜200日の下降配列で、200日線乖離は-50.96%",
+    "RSI（買われすぎ・売られすぎの指標）は39.9で売られすぎ圏ではなく、MACDも3日前にデッドクロス",
+    "11月6日付近に52週安値30.2ドルを付けた後の反発で、出来高は20日平均の1.54倍"
    ],
    "support": 30.2,
-   "resistance": 40
+   "resistance": 41
   },
   "fundamental": {
-   "summary": "売上は前年同期比で急増していますが、営業利益率は-544%と赤字が深く、フリーキャッシュフローも約-18億ドルです。現金約23億ドルに対し負債は約30億ドルで、時価総額は約126億ドル、売上高倍率(PSR)は約109倍と極めて割高です。資金調達による株式の希薄化(1株価値の低下)が続く懸念があります。",
+   "summary": "売上は前年比+187%と急成長しているが、営業利益率は-398%で大幅赤字。フリーCFは約-20億ドルで、現金28億ドルに対し負債41億ドルと資金需要が大きい。売上高倍率（PSR）は約100倍と、事業の実現を相当織り込んだ水準。",
    "valuation": "割高",
    "strengths": [
-    "売上が急拡大しており、衛星通信の事業機会が大きい",
-    "現金約23億ドル、流動比率13と短期の支払い余力は高い",
-    "自前の再使用型ロケット計画で打ち上げの自由度が高まる可能性"
+    "売上が前年比+187%で急拡大",
+    "流動比率13.7、現金28億ドルと当面の資金余力がある",
+    "楽天との日本JVなど大型提携で事業拡大の道筋が見える"
    ],
    "risks": [
-    "大幅な赤字とキャッシュ流出で、増資による希薄化リスクが高い",
-    "PSR約109倍と期待先行の評価で、失望時の下落余地が大きい",
-    "直近4四半期連続で大きなEPS下振れ、実行力に不安"
+    "フリーCF約-20億ドルの資金流出で、増資による希薄化（1株の価値の薄まり）の懸念",
+    "負債が現金を上回り、負債資本比率は190%",
+    "PSR約100倍で、衛星展開の遅れや収益化の失敗に株価が脆弱"
    ]
   },
   "earnings": {
-   "summary": "直近の2026年6月期(8月10日発表)はEPS-0.77ドルで予想-0.33ドルを大きく下回りました。売上は3,152万ドルと前年同期の116万ドルから急増しましたが、営業損失は1.72億ドルに拡大しています。過去4回はすべて下振れです。",
-   "lastResult": "下振れ",
-   "nextFocus": "11月9日発表予定(EPS予想-0.45ドル、売上予想約4,600万ドル)。売上が予想に届くか、赤字と設備投資の規模、増資・資金調達計画、衛星の打ち上げ時期とBlacklift計画の費用負担に注目です。"
+   "summary": "直近（11/9発表）のEPSは-0.44ドルで予想-0.45ドルとほぼ一致。ただしニュースによると売上は4,230万ドルで予想4,790万ドルを下回った。通期売上見通し1.5〜2億ドルは据え置き。過去3回はEPSが大幅な下振れで、決算の質は不安定。",
+   "lastResult": "おおむね予想通り",
+   "nextFocus": "年内に予定する米国などでの断続的な衛星サービス開始の進捗、衛星の打ち上げペース、通期売上見通しの達成可否、資金調達の動向。次回決算は2027年3月1日予定で、EPS予想は-0.44ドル、売上予想は約7,177万ドル。"
   },
   "news": {
-   "summary": "Firefly Aerospaceと13億ドル超のエンジン契約を結び、自社の再使用型ロケット計画を発表して株価は一時7%上昇しました。ただしSpaceXの動向を受けた1週間で26%の下落や、増資懸念が決算前の焦点です。",
+   "summary": "楽天との日本JV（政府支援最大約10億ドル）が好材料で株価は反発した。一方、売上は予想未達で、株価は年初来で大きく下落している。",
    "items": [
     {
-     "index": 6,
-     "titleJa": "ASTSが13億ドルのロケット計画で7%上昇",
+     "index": 0,
+     "titleJa": "AST、日本の衛星事業で最大10億ドルを確保",
      "sentiment": "好材料",
-     "title": "AST SpaceMobile Soars 7% on $1.3 Billion Rocket Plan Promising “Unconstrained Access to Orbit”",
-     "url": "https://www.tikr.com/blog/ast-spacemobile-soars-7-on-1-3-billion-rocket-plan-promising-unconstrained-access-to-orbit?ref=yahoofinance&tlnk=yf-261106-mhjpg9p6",
-     "date": "2026-11-06",
-     "publisher": "TIKR"
-    },
-    {
-     "index": 1,
-     "titleJa": "再使用型Blacklift rocketで2028年の打ち上げを自社管理へ",
-     "sentiment": "好材料",
-     "title": "AST SpaceMobile (ASTS) Bets On Reusable Blacklift Rocket To Control 2028 Launches",
-     "url": "https://finance.yahoo.com/technology/articles/ast-spacemobile-asts-bets-reusable-081231242.html",
-     "date": "2026-11-07",
+     "title": "AST SpaceMobile (ASTS) Secures Up To $1 Billion For Japan Satellite Venture",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-asts-secures-1-090953107.html",
+     "date": "2026-11-10",
      "publisher": "Simply Wall St."
     },
     {
-     "index": 9,
-     "titleJa": "1週間で26%下落、11月9日の決算で希薄化の問いに答える必要",
-     "sentiment": "悪材料",
-     "title": "AST SpaceMobile Fell 26% in a Week. The November 9 Report Has to Answer the Dilution Question",
-     "url": "https://www.tikr.com/blog/ast-spacemobile-fell-26-in-a-week-the-november-9-report-has-to-answer-the-dilution-question?ref=yahoofinance&tlnk=yf-261106-q7xp296v",
-     "date": "2026-11-06",
-     "publisher": "TIKR"
+     "index": 4,
+     "titleJa": "ASTS株が14.1%上昇、楽天JVが材料も売上は予想未達",
+     "sentiment": "好材料",
+     "title": "Why AST SpaceMobile Stock Jumped 14.1% Today",
+     "url": "https://www.fool.com/investing/2026/11/09/why-ast-spacemobile-stock-jumped-14-1-today/",
+     "date": "2026-11-09",
+     "publisher": "Motley Fool"
     },
     {
-     "index": 7,
-     "titleJa": "決算を前にBarchartがデータから今後を分析",
-     "sentiment": "中立",
-     "title": "Ahead of AST SpaceMobile Earnings, Here's What Barchart Data Says Comes Next for ASTS Stock",
-     "url": "https://www.barchart.com/story/news/8706234/ahead-of-ast-spacemobile-earnings-here-s-what-barchart-data-says-comes-next-for-asts-stock",
-     "date": "2026-11-06",
-     "publisher": "Barchart"
+     "index": 5,
+     "titleJa": "ASTは予想未達だが株価は小幅高（売上4,230万ドル、予想4,790万ドル）",
+     "sentiment": "悪材料",
+     "title": "AST SpaceMobile misses estimates but shares edge higher",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/ast-spacemobile-misses-estimates-shares-230148893.html",
+     "date": "2026-11-09",
+     "publisher": "Investing.com"
     },
     {
      "index": 3,
-     "titleJa": "SpaceX関連の逆風後、宇宙関連株が反発",
+     "titleJa": "Q3決算説明会：通期見通し据え置き、年内に断続的サービス開始へ",
      "sentiment": "中立",
-     "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
-     "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo",
-     "date": "2026-11-06",
-     "publisher": "Investor's Business Daily"
+     "title": "What AST SpaceMobile (ASTS) Said on Its Q3 Earnings Call",
+     "url": "https://www.marketbeat.com/instant-alerts/transcript-what-ast-spacemobile-asts-said-on-its-q3-earnings-call-2026-11-09/?utm_source=yahoofinance&utm_medium=yahoofinance",
+     "date": "2026-11-10",
+     "publisher": "MarketBeat"
+    },
+    {
+     "index": 8,
+     "titleJa": "ASTは2026年に55%下落、11月6日に52週安値を更新",
+     "sentiment": "悪材料",
+     "title": "AST SpaceMobile Is Down 55% in 2026: Is It Time to Sell, or Load Up?",
+     "url": "https://www.tikr.com/blog/ast-spacemobile-is-down-55-in-2026-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261109-jp3hg72f",
+     "date": "2026-11-09",
+     "publisher": "TIKR"
     }
    ]
   },
   "rating": {
    "stars": 2,
-   "reason": "売られ過ぎで反発余地はあるものの、極端な割高、深い赤字、希薄化懸念、決算の連続下振れ、下降トレンドと慎重材料が多いためです。"
+   "reason": "成長性と大型提携は魅力だが、大幅赤字、PSR約100倍、下降トレンド、過去の決算の不安定さが重なる。変動も極めて大きく、慎重な評価とする。"
   },
   "targetPrice": {
-   "price": 40,
-   "basis": "アナリスト平均74.7ドルは参考にとどめ、PSRが現状の約109倍から大幅に低下しても高水準が続くと見て、希薄化と赤字を織り込み40ドルとしました。",
-   "upsidePct": 23.7
+   "price": 45,
+   "basis": "アナリスト平均目標74.7ドル（最低42.5ドル）は参考にとどめ、赤字と希薄化リスクを織り込んで割り引いた。2026年売上見通し1.5〜2億ドルに対しPSR60〜70倍程度を想定した値で、確度は低い。",
+   "upsidePct": 22.0
   },
   "verdict": {
-   "action": "やや売り",
-   "reason": "下降トレンドが続き、決算は過去4回すべて下振れで、増資懸念もあります。短期は売られ過ぎで反発しやすいですが、戻りは限定的とみます。決算で売上や衛星打ち上げが大きく上振れし、資金調達不安が和らげば判断が外れる可能性があります。"
+   "action": "中立",
+   "reason": "楽天JVによる反発はあるが、下降トレンドは続き、安値30.2ドルからの戻りが定着するかは未確認。売りには大型材料と大きな下落後の反発余地があり、買いには根拠が弱い。年内のサービス開始が順調に進み、20日線と41ドル付近を明確に超えれば強気に転じる。逆に30ドルを割れば下落が加速する恐れがある。"
   }
  }
 }
