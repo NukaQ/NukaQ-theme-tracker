@@ -2,39 +2,38 @@
  "ticker": "RKLB",
  "market": "us",
  "name": "Rocket Lab",
- "analyzedAt": "2026-11-07T11:57:24+00:00",
- "asOf": "2026-11-06",
- "priceAtAnalysis": 53.07,
+ "analyzedAt": "2026-11-10T10:45:26+00:00",
+ "asOf": "2026-11-09",
+ "priceAtAnalysis": 58.86,
  "model": "Claude Code（claude-sonnet-5-5）",
  "facts": {
   "fundamentals": {
-   "marketCap": 33933541376,
-   "forwardPE": 923.1171,
-   "priceToBook": 9.0904,
-   "priceToSalesTrailing12Months": 44.1185,
-   "enterpriseToEbitda": -196.557,
-   "returnOnEquity": -7.92,
-   "returnOnAssets": -4.62,
-   "grossMargins": 37.26,
-   "operatingMargins": -24.57,
-   "profitMargins": -21.51,
-   "revenueGrowth": 62.0,
-   "debtToEquity": 3.828,
-   "currentRatio": 5.482,
-   "totalCash": 2302184960,
-   "totalDebt": 133691000,
-   "freeCashflow": -251963632,
+   "marketCap": 37635731456,
+   "forwardPE": 1023.8303,
+   "priceToBook": 10.0822,
+   "priceToSalesTrailing12Months": 42.6757,
+   "enterpriseToEbitda": -190.271,
+   "returnOnEquity": -6.41,
+   "returnOnAssets": -3.47,
+   "grossMargins": 36.21,
+   "operatingMargins": -29.57,
+   "profitMargins": -25.73,
+   "revenueGrowth": 72.7,
+   "debtToEquity": 2.073,
+   "currentRatio": 8.554,
+   "totalCash": 4607954944,
+   "totalDebt": 120284000,
+   "freeCashflow": -234922368,
    "dividendYield": 0.0,
    "payoutRatio": 0.0,
-   "beta": 3.176,
    "trailingEps": -0.27,
    "forwardEps": 0.0575
   },
   "analyst": {
-   "targetMeanPrice": 102.15,
-   "targetMedianPrice": 102.5,
+   "targetMeanPrice": 99.4,
+   "targetMedianPrice": 100.0,
    "targetHighPrice": 150.0,
-   "targetLowPrice": 64.0,
+   "targetLowPrice": 58.0,
    "recommendationKey": "buy",
    "recommendationMean": 1.5909,
    "numberOfAnalystOpinions": 20
@@ -42,34 +41,34 @@
   "earnings": {
    "history": [
     {
-     "date": "2025-11-10",
-     "epsEstimate": -0.06,
-     "epsActual": -0.02,
-     "surprisePct": 66.75
-    },
-    {
      "date": "2026-02-26",
-     "epsEstimate": -0.05,
-     "epsActual": -0.05,
-     "surprisePct": 10.0
+     "epsEstimate": -0.1,
+     "epsActual": -0.09,
+     "surprisePct": 8.19
     },
     {
      "date": "2026-05-07",
-     "epsEstimate": -0.04,
-     "epsActual": -0.02,
-     "surprisePct": 58.2
+     "epsEstimate": -0.08,
+     "epsActual": -0.07,
+     "surprisePct": 11.03
     },
     {
      "date": "2026-08-10",
      "epsEstimate": -0.08,
      "epsActual": -0.08,
      "surprisePct": -4.34
+    },
+    {
+     "date": "2026-11-09",
+     "epsEstimate": -0.07,
+     "epsActual": -0.12,
+     "surprisePct": -80.59
     }
    ],
    "next": {
-    "date": "2026-11-09",
-    "epsEstimate": -0.07,
-    "revenueEstimate": 257177890
+    "date": "2027-02-25",
+    "epsEstimate": -0.05,
+    "revenueEstimate": 273368480
    },
    "quarterly": [
     {
@@ -111,74 +110,74 @@
   },
   "news": [
    {
-    "title": "Cathie Wood-Led Ark Loads Up On GOOG, AMD, NVDA And Biotech Stocks — But Sells CRWV, AVGO, LLY",
-    "summary": "The latest round of trades touched multiple ARK ETFs, spanning artificial intelligence, semiconductors, biotechnology, defense and space-related companies.",
-    "date": "2026-11-07",
+    "title": "US Stock Futures Mixed As Investors Await CPI Data — AMD, CRWV, RKLB Stocks In Focus",
+    "summary": "Oil prices continued to decline as easing concerns about a potential U.S. military strike on Iran reduced fears of supply disruptions.",
+    "date": "2026-11-10",
     "publisher": "Stocktwits",
-    "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-invest-buys-goog-amd-nvda-biotech-stocks-sell-crwv-avgo-lly/cNGVV2wR9Ii"
+    "url": "https://stocktwits.com/news-articles/markets/equity/us-stock-futures-mixed-as-investors-await-cpi-data-amd-crwv-rklb-stocks-in-focus/cNGug0DR97u"
    },
    {
-    "title": "3 Space Stocks With Revenue Growth Up To 27%",
-    "summary": "Fresh US jobs data shows employers added 165,000 roles in October and unemployment moved to 4.1%, which points to a still resilient economy even as central bankers talk tough on inflation. That mix of solid activity and rate anxiety has pulled attention toward assets tied to long term infrastructure",
-    "date": "2026-11-07",
-    "publisher": "Simply Wall St.",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/3-space-stocks-revenue-growth-011656763.html"
+    "title": "Rocket Lab Corp (RKLB) Q3 2026 Earnings Call Highlights: Record Revenue and Backlog Surge as ...",
+    "summary": "Rocket Lab Corp (RKLB) posted a sixth straight record quarter with revenue up 73% to $267.8 million and backlog at $3.57 billion, even as its first Neutron launch was pushed into 2027.",
+    "date": "2026-11-10",
+    "publisher": "GuruFocus.com",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corp-rklb-q3-070725351.html"
    },
    {
-    "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
-    "summary": "Texas Gov.-elect requests pause on potential land sale to SpaceX. Odds of Tesla merger falls after midterms. FAA plans boost space stocks.",
-    "date": "2026-11-06",
+    "title": "Rocket Lab Q3 Earnings Call Highlights",
+    "summary": "Rocket Lab (NASDAQ:RKLB) reported record third-quarter 2026 revenue and backlog as demand for launch services and spacecraft helped offset rising spending on its Neutron rocket. Revenue rose 73% from a year earlier to $267.8 million, above the company’s guidance of $250 million to $265 million. The",
+    "date": "2026-11-10",
+    "publisher": "MarketBeat",
+    "url": "https://www.marketbeat.com/instant-alerts/transcript-rocket-lab-q3-earnings-call-highlights-2026-11-09/?utm_source=yahoofinance&utm_medium=yahoofinance"
+   },
+   {
+    "title": "Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Report Next",
+    "summary": "Dow Jones futures were in focus after soaring 1,132 points ahead of the CPI inflation report. Amazon and Tesla rallied, but Nvidia dived.",
+    "date": "2026-11-10",
     "publisher": "Investor's Business Daily",
-    "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo"
+    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-amazon-tesla-nvidia-cpi-inflation-report/?src=A00220&yptr=yahoo"
    },
    {
-    "title": "Musk Says SpaceX Will Hit a Revenue Number That Not One of Its 37 Analysts Believes",
-    "summary": "Elon Musk calls his latest SpaceX forecast a best guess, not a promise, yet it dwarfs every model on the Street. The gap between his vision and the current quarterly numbers shows just how much has to go right.",
-    "date": "2026-11-06",
-    "publisher": "24/7 Wall St.",
-    "url": "https://247wallst.com/investing/2026/11/06/musk-says-spacex-will-hit-a-revenue-number-that-not-one-of-its-37-analysts-believes/"
+    "title": "RKLB Stock Sinks After-Hours On Q3 Earnings Miss, But Neutron Launches Now Fetch $70M – And New Buyers Face A 2030s Wait",
+    "summary": "Longer term, Rocket Lab wants half of Neutron’s capacity for its own services and sees potential Neutron non-GAAP gross margins above 50%.",
+    "date": "2026-11-10",
+    "publisher": "Stocktwits",
+    "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-q3-earnings-miss-neutron-70m-new-buyers-face-2030s-wait/cNGuRxJR97X"
    },
    {
-    "title": "Ahead of Rocket Lab Earnings, Here's What Barchart Data Says Comes Next for RKLB Stock",
-    "summary": "Rocket Lab is set to report its fiscal Q3 earnings on Nov. 9. Options data suggests RKLB shares will rally after the quarterly event.",
-    "date": "2026-11-06",
-    "publisher": "Barchart",
-    "url": "https://www.barchart.com/story/news/8706048/ahead-of-rocket-lab-earnings-here-s-what-barchart-data-says-comes-next-for-rklb-stock"
+    "title": "Rocket Lab (RKLB) Wins NASA Spot In $10 Billion Lunar Delivery Contracts",
+    "summary": "Rocket Lab (NasdaqGS: RKLB) has been selected by NASA for lunar delivery work alongside SpaceX under new contracts. The Commercial Lunar Payload Services awards cover up to US$10b of missions shared across eight approved contractors. NASA intends to use these providers to transport instruments and t",
+    "date": "2026-11-10",
+    "publisher": "Simply Wall St.",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-wins-nasa-001548248.html"
    },
    {
-    "title": "Tesla Rebounds 5% as Musk Ends Cybertruck to Make Room for “Increased Cybercab Production”",
-    "summary": "[IMAGE CREDIT: NASA/Aubrey Gemignani and SUMALI IBNU CHAMID from Alemedia. id via Canva] Key TakeawaysTesla rose 5% today after Elon Musk said it will wind down Cybertruck production in Texas around mid-2027 to build more Cybercabs.",
-    "date": "2026-11-06",
-    "publisher": "TIKR",
-    "url": "https://www.tikr.com/blog/tesla-rebounds-5-as-musk-ends-cybertruck-to-make-room-for-increased-cybercab-production?ref=yahoofinance&tlnk=yf-261106-69vjr5x9"
+    "title": "Rocket Lab Corporation (RKLB) Reports Q3 Loss, Tops Revenue Estimates",
+    "summary": "Rocket Lab Corporation (RKLB) delivered earnings and revenue surprises of -250.00% and +4.42%, respectively, for the quarter ended September 2026. Do the numbers hold clues to what lies ahead for the stock?",
+    "date": "2026-11-09",
+    "publisher": "Zacks",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corporation-rklb-reports-223507021.html"
    },
    {
-    "title": "AST SpaceMobile Will Use Firefly in Bold Move to Build Its Starlink Competitor",
-    "summary": "Mobile communications satellite operator AST SpaceMobile drops a space-bombshell on Friday.",
-    "date": "2026-11-06",
-    "publisher": "Barrons.com",
-    "url": "https://www.barrons.com/articles/ast-spacemobile-stock-firely-aerospace-spacex-starlink-c04f3977?siteid=yhoof2&yptr=yahoo"
+    "title": "Rocket Lab Corporation (RKLB) Q3 Earnings: Taking a Look at Key Metrics Versus Estimates",
+    "summary": "While the top- and bottom-line numbers for Rocket Lab Corporation (RKLB) give a sense of how the business performed in the quarter ended September 2026, it could be worth looking at how some of its key metrics compare to Wall Street estimates and year-ago values.",
+    "date": "2026-11-09",
+    "publisher": "Zacks",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corporation-rklb-q3-223001517.html"
    },
    {
-    "title": "SpaceX Rises 4% as Tech Stocks Rebound From Post-Election Rout; AST SpaceMobile Sinks 8%, Rocket Lab Gains 2%",
-    "summary": "After a brutal midterm selloff, SpaceX is clawing back ground while one space rival keeps sliding. Between Washington scrutiny, a looming Tesla merger vote, and a record-high cost to insure its debt, the bounce faces real tests.",
-    "date": "2026-11-06",
-    "publisher": "24/7 Wall St.",
-    "url": "https://247wallst.com/investing/2026/11/06/spacex-rises-4-as-tech-stocks-rebound-from-post-election-rout-ast-spacemobile-sinks-8-rocket-lab-gains-2/"
+    "title": "Rocket Lab falls on earnings miss despite revenue beat",
+    "summary": "Investing.com -- Rocket Lab Corp (NASDAQ:RKLB) reported third quarter results that missed earnings expectations despite beating revenue estimates and issuing stronger-than-expected guidance, sending shares down 3.8% in after-hours trading Monday.",
+    "date": "2026-11-09",
+    "publisher": "Investing.com",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-falls-earnings-miss-222457004.html"
    },
    {
-    "title": "Dear Rocket Lab Stock Fans, Mark Your Calendars for November 9",
-    "summary": "Rocket Lab is expected to report its Q3 results on Nov. 9, after the market closes.",
-    "date": "2026-11-06",
-    "publisher": "Barchart",
-    "url": "https://www.barchart.com/story/news/8701748/dear-rocket-lab-stock-fans-mark-your-calendars-for-november-9"
-   },
-   {
-    "title": "Rocket Lab Earnings Ahead: What Past Reactions Say About The Stock",
-    "summary": "Rocket Lab (NASDAQ:RKLB) is scheduled to report its earnings on Monday, November 9, 2026. The company has a market value of about $29.0 billion. Over the last twelve months it generated $769 million in revenue and posted an operating loss of $223 million, with a net loss of $165 million.",
-    "date": "2026-11-06",
-    "publisher": "Trefis",
-    "url": "https://www.trefis.com/stock/rklb/articles/623196/rocket-lab-earnings-ahead-what-past-reactions-say-about-the-stock/2026-11-06"
+    "title": "Rocket Lab (NASDAQ:RKLB) reports bullish Q3 2026, guides for strong sales next quarter",
+    "summary": "Aerospace and defense company Rocket Lab (NASDAQ:RKLB) reported Q3 2026 results exceeding the market’s revenue expectations, with revenue up 72.7% year on year to $267.8 million. In addition, next quarter’s revenue guidance ($280 million at the midpoint) was surprisingly strong and 5.1% above analys",
+    "date": "2026-11-09",
+    "publisher": "StockStory",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-nasdaq-rklb-reports-214909928.html"
    }
   ],
   "profile": {
@@ -188,99 +187,99 @@
   }
  },
  "ai": {
-  "headline": "高成長だが極端に割高。決算前の反発局面で慎重姿勢",
+  "headline": "売上は絶好調だが超割高で急落後の戻り局面、慎重に",
   "technical": {
-   "summary": "3か月で-33.7%、6か月で-49.7%と下落が続き、株価は20・50・200日線すべての下にある。1日で+15.39%と大きく反発したが、下降トレンド内の戻りの可能性が高い。ボラティリティは年率103%と非常に大きい。",
+   "summary": "52週高値150.23ドルから約61%下落し、200日線を25%下回る中期の下降局面。直近は決算後の反発で1日+10.9%上昇し、20日線を上回った。年率変動率は111%と非常に高く、値動きは荒い。",
    "trend": "下降トレンド",
    "signals": [
-    "移動平均が株価＜短期＜中期＜長期の下降配列。200日線から-32.7%乖離",
-    "MACDは1日前にデッドクロス（下落の勢いが強まるサイン）。RSI43.8で中立圏",
-    "直近60日安値45.99ドルと高値82.08ドルのレンジ内。52週高値から-64.7%"
+    "MACDがゴールデンクロス（短期線が長期線を上抜け）したが、水準はマイナス圏で戻りの初期段階",
+    "20日線+7.9%、50日線-5.7%、200日線-25.2%で、上値に50日線・200日線の戻り売り圧力",
+    "出来高は20日平均の1.59倍で反発に参加者はいるが、RSI51.4は中立"
    ],
-   "support": 45.99,
-   "resistance": 61.5
+   "support": 52,
+   "resistance": 66
   },
   "fundamental": {
-   "summary": "売上は前年比+62%と高成長で、現金23億ドルに対し負債1.3億ドルと財務は健全。一方で営業利益率-24.6%、FCFは-2.5億ドルの赤字。時価総額約339億ドル、売上高倍率44倍、PBR9倍、予想PER約923倍と、将来の成長を極めて強く織り込んでいる。",
+   "summary": "売上成長は前年比+72.7%と高いが、営業利益率は-29.6%で赤字が続く。PSR（株価売上高倍率）は42.7倍、予想PERは約1,024倍と極めて割高。手元資金は約46億ドルで財務は健全。",
    "valuation": "割高",
    "strengths": [
-    "売上高が前年比+62%で、四半期売上も1.44億→2.34億ドルへ拡大",
-    "現金23億ドル、流動比率5.5倍で資金繰りに余裕",
-    "打ち上げと宇宙システムの両事業を持つ垂直統合型"
+    "売上が高成長を続け、直近は前年比+73%",
+    "現金約46億ドルに対し負債約1.2億ドルで資金余力が大きい",
+    "受注残高35.7億ドルとNASA月面輸送契約への参加で成長の見通しが立ちやすい"
    ],
    "risks": [
-    "売上高倍率44倍など評価が極端に高く、期待が外れると下落が大きい",
-    "営業赤字とFCFマイナスが続く",
-    "β3.7、変動率103%で相場全体の悪化に弱い"
+    "PSR42.7倍と成長期待を大きく織り込み、失望時の下落が大きい",
+    "フリーキャッシュフローは-2.3億ドルで、Neutronロケットの開発費負担が続く",
+    "Neutron初打ち上げが2027年にずれ込み、遅延リスクがある"
    ]
   },
   "earnings": {
-   "summary": "直近2026年6月期は売上2.34億ドル（前年同期比約+62%）で増収が続いたが、EPSは-0.08ドルで予想並み（サプライズ-4.3%）。過去4回のうち3回は上振れだが、直近は小幅に下振れ。赤字は継続している。",
-   "lastResult": "おおむね予想通り",
-   "nextFocus": "11月9日発表予定（予想EPS -0.07ドル、売上約2.57億ドル）。売上の達成度、粗利率と赤字幅の縮小、受注残、中型ロケット開発の進捗に注目。"
+   "summary": "2026年7-9月期はEPS-0.12ドルで予想-0.07ドルを下回り下振れ。一方、売上は2.68億ドル（前年比+73%）でガイダンス上限2.65億ドルを上回り、次四半期の売上見通しも約2.8億ドルと強い。損益は赤字が続く。",
+   "lastResult": "下振れ",
+   "nextFocus": "次回は2027年2月25日予定。Neutron初打ち上げの時期と開発費の推移、受注残高の伸び、粗利益率の改善、売上予想2.73億ドルの達成度に注目。"
   },
   "news": {
-   "summary": "決算前の期待と宇宙株全体の反発が目立つ。SpaceXやAST SpaceMobileなど他社の話題が多く、直接材料は決算関連が中心。オプション市場は決算後の上昇を示唆するが、割高感から変動は大きい。",
+   "summary": "売上・受注残高は過去最高で次四半期の見通しも強く、NASAの月面輸送契約獲得も好材料。一方、EPSの下振れとNeutron初打ち上げの2027年への延期が重しとなる。",
    "items": [
     {
-     "index": 4,
-     "titleJa": "ロケットラボ決算前、オプションは決算後の上昇を示唆",
-     "sentiment": "好材料",
-     "title": "Ahead of Rocket Lab Earnings, Here's What Barchart Data Says Comes Next for RKLB Stock",
-     "url": "https://www.barchart.com/story/news/8706048/ahead-of-rocket-lab-earnings-here-s-what-barchart-data-says-comes-next-for-rklb-stock",
-     "date": "2026-11-06",
-     "publisher": "Barchart"
-    },
-    {
-     "index": 8,
-     "titleJa": "11月9日の引け後に第3四半期決算を発表予定",
+     "index": 1,
+     "titleJa": "7-9月期は売上・受注残高が過去最高、Neutron初打ち上げは2027年へ",
      "sentiment": "中立",
-     "title": "Dear Rocket Lab Stock Fans, Mark Your Calendars for November 9",
-     "url": "https://www.barchart.com/story/news/8701748/dear-rocket-lab-stock-fans-mark-your-calendars-for-november-9",
-     "date": "2026-11-06",
-     "publisher": "Barchart"
+     "title": "Rocket Lab Corp (RKLB) Q3 2026 Earnings Call Highlights: Record Revenue and Backlog Surge as ...",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-corp-rklb-q3-070725351.html",
+     "date": "2026-11-10",
+     "publisher": "GuruFocus.com"
     },
     {
      "index": 9,
-     "titleJa": "決算前、過去の株価反応を分析（直近売上7.69億ドル、営業赤字2.23億ドル）",
+     "titleJa": "売上は前年比+72.7%、次四半期ガイダンスも予想を5.1%上回る",
+     "sentiment": "好材料",
+     "title": "Rocket Lab (NASDAQ:RKLB) reports bullish Q3 2026, guides for strong sales next quarter",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-nasdaq-rklb-reports-214909928.html",
+     "date": "2026-11-09",
+     "publisher": "StockStory"
+    },
+    {
+     "index": 5,
+     "titleJa": "NASAの最大100億ドル規模の月面輸送契約に選定",
+     "sentiment": "好材料",
+     "title": "Rocket Lab (RKLB) Wins NASA Spot In $10 Billion Lunar Delivery Contracts",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-wins-nasa-001548248.html",
+     "date": "2026-11-10",
+     "publisher": "Simply Wall St."
+    },
+    {
+     "index": 8,
+     "titleJa": "売上は予想超えもEPS未達で時間外は下落",
+     "sentiment": "悪材料",
+     "title": "Rocket Lab falls on earnings miss despite revenue beat",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-falls-earnings-miss-222457004.html",
+     "date": "2026-11-09",
+     "publisher": "Investing.com"
+    },
+    {
+     "index": 4,
+     "titleJa": "Neutronの打ち上げ単価は7,000万ドル、新規顧客は2030年代待ち",
      "sentiment": "中立",
-     "title": "Rocket Lab Earnings Ahead: What Past Reactions Say About The Stock",
-     "url": "https://www.trefis.com/stock/rklb/articles/623196/rocket-lab-earnings-ahead-what-past-reactions-say-about-the-stock/2026-11-06",
-     "date": "2026-11-06",
-     "publisher": "Trefis"
-    },
-    {
-     "index": 7,
-     "titleJa": "選挙後の急落から宇宙株が反発、ロケットラボは+2%",
-     "sentiment": "好材料",
-     "title": "SpaceX Rises 4% as Tech Stocks Rebound From Post-Election Rout; AST SpaceMobile Sinks 8%, Rocket Lab Gains 2%",
-     "url": "https://247wallst.com/investing/2026/11/06/spacex-rises-4-as-tech-stocks-rebound-from-post-election-rout-ast-spacemobile-sinks-8-rocket-lab-gains-2/",
-     "date": "2026-11-06",
-     "publisher": "24/7 Wall St."
-    },
-    {
-     "index": 2,
-     "titleJa": "FAAの計画などで宇宙株が反発",
-     "sentiment": "好材料",
-     "title": "SpaceX Land Deal, Tesla Merger Dealt Election Blow. Space Stocks Rebound.",
-     "url": "https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/?src=A00220&yptr=yahoo",
-     "date": "2026-11-06",
-     "publisher": "Investor's Business Daily"
+     "title": "RKLB Stock Sinks After-Hours On Q3 Earnings Miss, But Neutron Launches Now Fetch $70M – And New Buyers Face A 2030s Wait",
+     "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-q3-earnings-miss-neutron-70m-new-buyers-face-2030s-wait/cNGuRxJR97X",
+     "date": "2026-11-10",
+     "publisher": "Stocktwits"
     }
    ]
   },
   "rating": {
-   "stars": 2,
-   "reason": "売上成長と財務の健全性は魅力だが、評価が極端に高く、下降トレンドで赤字も続くため慎重に見る。"
+   "stars": 3,
+   "reason": "売上の高成長、豊富な現金、受注残高は魅力。ただしPSR42.7倍の割高感、赤字、Neutron遅延、変動率の高さを踏まえ普通とした。"
   },
   "targetPrice": {
-   "price": 60,
-   "basis": "アナリスト平均102ドルは参考にとどめた。売上が今後1年で約30〜40%伸びても売上高倍率30倍前後が上限と見て、現在よりやや高い水準とした。",
-   "upsidePct": 13.1
+   "price": 70,
+   "basis": "今期売上は年約9億ドル規模と推定されるが、データ上は直近四半期2.68億ドルと次四半期見通し2.8億ドル。PSRを30倍前後に圧縮する前提で70ドルとした。アナリスト平均99.4ドルは楽観的とみて割り引いている。",
+   "upsidePct": 18.9
   },
   "verdict": {
-   "action": "やや売り",
-   "reason": "下降トレンドが続き、決算前に急反発した直後で、割高感も強い。決算で売上・受注残が大きく上振れし、宇宙株全体が上昇に転じれば判断は外れる。決算での大きな値動きに注意。"
+   "action": "中立",
+   "reason": "事業は好調だが、株価は200日線を大きく下回る下降局面で、割高感とボラティリティが高い。反発が続くか見極めたい。50日線（約62ドル）や66ドルを出来高を伴って超えれば強気に転じる可能性があり、逆に52ドルを割れば下落が加速しうる。"
   }
  }
 }
